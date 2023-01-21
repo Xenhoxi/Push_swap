@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/21 01:02:36 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/21 15:30:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,27 @@ void	push_back(t_stack *stack, int new_value)
 	stack->value = new_value;
 }
 
-/*
-Ajoute au debut de la liste !
-*/
+t_stack	*fill_stack(int argc, char **argv)
+{
+	t_stack	*stack;
+	t_stack	*stack_first;
+	int		i;
 
-// void	push_back(t_stack **stack, int new_value)
-// {
-// t_stack *new_node = malloc(sizeof(t_stack));
-// new_node->value = new_value;
-// new_node->next = *stack;
-// *stack = new_node;
-// }
+	i = 1;
+	stack = malloc(sizeof(t_stack));
+	stack->value = ft_atoi(argv[i++]);
+	stack_first = stack;
+	while (i < argc)
+	{
+		while (stack->next)
+			stack = stack->next;
+		stack->next = malloc(sizeof(t_stack));
+		stack = stack->next;
+		stack->value = ft_atoi(argv[i]);
+		i++;
+	}
+	return (stack_first);
+}
 
 void	print_stack(t_stack *stack)
 {
@@ -44,19 +54,17 @@ void	print_stack(t_stack *stack)
 
 int	main(int argc, char **argv)
 {
-	if (parsing(argc, argv))
-		printf("Error\n");
-	else
-		printf("Parsing OK !\n");
-	// t_stack_info	*stack_info;
-	// t_stack			*stack1;
+	t_stack			*stack1;
+	int				i;
 
-	// stack_info = malloc(sizeof(t_stack));
-	// stack1 = malloc(sizeof(t_stack));
-	// stack_info->s1_first = stack1;
-	// push_back(stack1, 102);
-	// push_back(stack1, 103);
-	// push_back(stack1, 104);
-	// print_stack(stack1);
+	i = 1;
+	stack1 = fill_stack(argc, argv);
+	push_back(stack1, 15);
+	print_stack(stack1);
 	return (0);
 }
+
+	// if (parsing(argc, argv))
+	// 	printf("Error\n");
+	// else
+	// 	printf("Parsing OK !\n");
