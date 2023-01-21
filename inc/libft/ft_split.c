@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 18:16:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2022/11/29 22:10:18 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/21 00:59:09 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,4 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	return (tab);
-}
-
-int main()
-{
-	ft_split("ok | je | test le | debugger", '|');
-	return (0);
 }

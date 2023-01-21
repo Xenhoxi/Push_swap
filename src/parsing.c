@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/21 00:56:46 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/01/21 01:10:37 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
+#include "../inc/pushswap.h"
 
-# define PUSHSWAP_H
+// bool	check_argv()
+// {
+// 	//Is_digit()
+//	//atoi
+// 	//Is_int()
+// 	//No_multiple_same_numbers()
+// }
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include "libft/libft.h"
-
-typedef struct s_stack
+int	parsing(int argc, char **argv)
 {
-	int				value;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}					t_stack;
+	char	**numbers_list;
+	int		i;
 
-typedef struct s_stack_info
-{
-	struct s_stack	*s1_first;
-	struct s_stack	*s1_last;
-}					t_stack_info;
-
-int	parsing(int argc, char **argv);
-
-#endif
+	i = 0;
+	if (argc == 2)
+	{
+		numbers_list = ft_split(argv[1], ' ');
+		while (numbers_list[i])
+			printf("%s\n", numbers_list[i++]);
+		//Check_argv()
+		return (0);
+	}
+	return (1);
+}

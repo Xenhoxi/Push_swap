@@ -6,31 +6,57 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/19 18:26:28 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/21 01:02:36 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pushswap.h>
+#include "../inc/pushswap.h"
 
-int	push_back(t_stack *stack, int new_value)
+void	push_back(t_stack *stack, int new_value)
 {
-	if (!stack)
-		return (0);
 	while (stack->next)
 		stack = stack->next;
 	stack->next = malloc(sizeof(t_stack));
 	stack = stack->next;
 	stack->value = new_value;
-	return (1);
+}
+
+/*
+Ajoute au debut de la liste !
+*/
+
+// void	push_back(t_stack **stack, int new_value)
+// {
+// t_stack *new_node = malloc(sizeof(t_stack));
+// new_node->value = new_value;
+// new_node->next = *stack;
+// *stack = new_node;
+// }
+
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("%d\n", stack->value);
+		stack = stack->next;
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack_info	*stack1_info;
-	t_stack			*stack1;
+	if (parsing(argc, argv))
+		printf("Error\n");
+	else
+		printf("Parsing OK !\n");
+	// t_stack_info	*stack_info;
+	// t_stack			*stack1;
 
-	stack1 = malloc(sizeof(t_stack));
-	stack1_info = malloc(sizeof(t_stack));
-	stack1_info->first = stack1;
+	// stack_info = malloc(sizeof(t_stack));
+	// stack1 = malloc(sizeof(t_stack));
+	// stack_info->s1_first = stack1;
+	// push_back(stack1, 102);
+	// push_back(stack1, 103);
+	// push_back(stack1, 104);
+	// print_stack(stack1);
 	return (0);
 }
