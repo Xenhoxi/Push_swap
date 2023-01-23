@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/23 04:47:54 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:59:59 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,19 @@ int	only_digit(char	**input_list, int argc)
 	int	i;
 	int	u;
 
-	i = 1;
+	i = 0;
 	u = 0;
-	while (i <= argc)
+	while (i < argc)
 	{
-		while (input_list[i])
+		while (input_list[i][u])
 		{
 			if ((input_list[i][u] >= '0' && input_list[i][u] <= '9')
-				|| input_list[i][u] == '-' || input_list[i][u] == ' ')
+				|| input_list[i][u] == '-')
 				u++;
 			else
 				return (0);
 		}
+		u = 0;
 		i++;
 	}
 	return (1);
@@ -53,7 +54,7 @@ int	check_argv(char	**input_list, int argc)
 	return (checker);
 }
 
-int	parsing(int argc, char **argv)
+int	checking(int argc, char **argv)
 {
 	char	**input_list;
 
@@ -62,7 +63,7 @@ int	parsing(int argc, char **argv)
 	if (argc == 2)
 	{
 		input_list = ft_split(argv[1], ' ');
-		if (check_argv(input_list, argc))
+		if (check_argv(input_list, array_len(input_list)))
 			return (1);
 		else
 			error();

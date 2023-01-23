@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/21 00:56:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:44:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stack_info
 	struct s_stack	*s1_last;
 }					t_stack_info;
 
-int	parsing(int argc, char **argv);
+int	checking(int argc, char **argv);
+int	array_len(char **argv);
 
 #endif
