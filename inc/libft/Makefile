@@ -13,6 +13,7 @@
 NAME = libft.a
 
 SRC = ft_strlen.c \
+	ft_atoi_long_long.c \
 	ft_atoi.c \
 	ft_bzero.c \
 	ft_isalpha.c \

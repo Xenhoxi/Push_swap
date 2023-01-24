@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/23 14:58:54 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/24 02:29:49 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,11 @@ int	main(int argc, char **argv)
 
 	if (checking(argc, argv))
 	{
-		stack1 = fill_stack(argc, ft_split(argv[1], ' '));
+		write(1, "le checking est carré !\n", 25);
+		if (argc == 2)
+			stack1 = fill_stack(argc - 1, ft_split(argv[1], ' '));
+		if (argc > 2)
+			stack1 = fill_stack(argc - 1, &argv[1]);
 		print_stack(stack1);
 	}
 	return (0);

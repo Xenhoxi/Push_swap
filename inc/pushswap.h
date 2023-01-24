@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/23 14:44:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/24 02:18:07 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 typedef struct s_stack
