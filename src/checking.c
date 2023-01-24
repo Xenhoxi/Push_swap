@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/24 02:43:45 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:49:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,32 +44,52 @@ int	only_digit(char	**input_list, int argc)
 int	only_int(char **input_list)
 {
 	int			i;
-	long long	number;
+	long long	*numbers;
+	int			input_list_len;	
 
 	i = 0;
+	input_list_len = array_len(input_list);
+	numbers = malloc(sizeof(int) * input_list_len);
 	while (input_list[i])
 	{
-		number = ft_atoi_2(input_list[i]);
-		if (number < INT_MIN || number > INT_MAX)
+		numbers[i] = ft_atoi_2(input_list[i]);
+		if (numbers[i] < INT_MIN || numbers[i] > INT_MAX)
 			return (0);
 		i++;
 	}
+	if (identical_numbers(numbers, input_list_len))
+		return (0);
 	return (1);
 }
 
-// int	no_identical_numbers(char **input_list)
-// {
-	//cree un tableau d'int
-	//verifier si deux nombres sont identique a l'interieur du tableau d'int
-	//free le tableau d'int
-// }
+int	identical_numbers(long long *int_array, int input_len)
+{
+	int	i;
+	int	u;
+
+	u = 1;
+	i = 0;
+	while (i < input_len)
+	{
+		while (u < input_len)
+		{
+			if (i != u)
+				if (int_array[i] == int_array[u])
+					return (1);
+			u++;
+		}
+		u = i;
+		i++;
+	}
+	free(int_array);
+	return (0);
+}
 
 int	check_argv(char	**input_list, int argc)
 {
 	if (only_digit(input_list, argc))
 		if (only_int(input_list))
-			// if (no_identical_numbers())
-				return (1);
+			return (1);
 	return (0);
 }
 
@@ -93,7 +113,7 @@ int	checking(int argc, char **argv)
 		if (check_argv(input_list, argc - 1))
 			return (1);
 		else
-			return (0);
+			error();
 	}
 	return (0);
 }

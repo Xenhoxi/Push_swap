@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/24 02:18:07 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:24:37 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ typedef struct s_stack_info
 
 int	checking(int argc, char **argv);
 int	array_len(char **argv);
+int	identical_numbers(long long *int_array, int input_len);
 
 #endif
