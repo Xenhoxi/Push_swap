@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/24 02:29:49 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/25 01:24:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,20 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+
+/*
+Faire en sorte que mes piles soit circulaire et reversible
+Trop de fonctinos dans le checking.c
+Coder les fonctions de modifications des piles :
+sa : Intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
+sb : Intervertit les 2 premiers éléments au sommet de la pile b. Ne fait rien s’il n’y en a qu’un ou aucun.
+ss : sa et sb en même temps.
+pa : Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
+pb : Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.
+ra : Décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.
+rb : Décale d’une position vers le haut tous les élements de la pile b. Le premier élément devient le dernier.
+rr : ra et rb en même temps.
+rra : Décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier.
+rrb : Décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier. 
+rrr : rra et rrb en même temps.
+*\
