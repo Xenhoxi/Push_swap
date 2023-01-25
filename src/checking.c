@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/24 15:49:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:05:19 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ int	only_int(char **input_list)
 	{
 		numbers[i] = ft_atoi_2(input_list[i]);
 		if (numbers[i] < INT_MIN || numbers[i] > INT_MAX)
+		{
+			free(input_list);
 			return (0);
+		}
 		i++;
 	}
 	if (identical_numbers(numbers, input_list_len))
@@ -74,8 +77,13 @@ int	identical_numbers(long long *int_array, int input_len)
 		while (u < input_len)
 		{
 			if (i != u)
+			{
 				if (int_array[i] == int_array[u])
+				{
+					free(int_array);
 					return (1);
+				}
+			}
 			u++;
 		}
 		u = i;
@@ -97,8 +105,6 @@ int	checking(int argc, char **argv)
 {
 	char	**input_list;
 
-	if (argc <= 1)
-		error();
 	if (argc == 2)
 	{
 		input_list = ft_split(argv[1], ' ');
@@ -117,3 +123,5 @@ int	checking(int argc, char **argv)
 	}
 	return (0);
 }
+
+// Free input_list (le resultat du spit)
