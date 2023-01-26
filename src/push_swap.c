@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/25 14:50:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/26 02:30:36 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push_back(t_stack *stack, int new_value)
 {
 	while (stack->next)
 		stack = stack->next;
-	stack = malloc(sizeof(t_stack));
+	stack->next = malloc(sizeof(t_stack));
 	stack = stack->next;
 	stack->value = new_value;
 }
@@ -41,16 +41,18 @@ t_stack	*fill_stack(int argc, char **argv)
 	i = 0;
 	len_args = array_len(argv);
 	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
 	stack->value = ft_atoi(argv[i]);
 	stack_first = stack;
-	while (++i < argc || i < len_args)
+	while (++i < argc || i < len_args - 1)
 		push_back(stack, ft_atoi(argv[i]));
 	return (stack_first);
 }
 
 void	print_stack(t_stack *stack)
 {
-	while (stack->next)
+	while (stack)
 	{
 		printf("%d\n", stack->value);
 		stack = stack->next;
