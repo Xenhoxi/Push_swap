@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/26 03:05:09 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:57:10 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 int	main(int argc, char **argv)
 {
 	t_stack			*stack1;
+	char			**input_list;
 
 	if (checking(argc, argv))
 	{
 		write(1, "Ok !\n", 5);
 		if (argc == 2)
-			stack1 = fill_stack(argc - 1, ft_split(argv[1], ' '));
+		{
+			input_list = ft_split(argv[1], ' ');
+			stack1 = fill_stack_split(array_len(input_list), input_list);
+		}
 		if (argc > 2)
-			stack1 = fill_stack(argc - 1, &argv[1]);
+			stack1 = fill_stack_argv(argc, argv);
 		print_stack(stack1);
 	}
 	return (0);

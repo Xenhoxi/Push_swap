@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 03:00:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/26 15:49:46 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/01/26 17:34:58 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/01/26 17:41:48 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
 
-int	array_len(char **argv)
-{	
-	int	i;
-
-	i = 0;
-	while (argv[i])
-		i++;
-	return (i);
+void	pa(t_stack *stack)
+{
+	if (stack && stack->next)
+	{
+		stack = 
+	}
 }

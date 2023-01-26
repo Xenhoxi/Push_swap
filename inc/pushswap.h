@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/26 03:03:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:17:40 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <limits.h>
 # include "libft/libft.h"
 
-// Stuct pour mes 2 stacks
+// Stuct pour mes 2 stacks claquer au sol ce code de merde
 typedef struct s_stack
 {
 	int				value;
@@ -40,7 +40,8 @@ int		identical_numbers(long long *int_array, int input_len);
 void	error(char **input_list);
 
 // stack_gestion.c
-t_stack	*fill_stack(int argc, char **argv);
+t_stack	*fill_stack_split(int argc, char **argv);
+t_stack	*fill_stack_argv(int argc, char **argv);
 void	push_back(t_stack *stack, int new_value);
 void	print_stack(t_stack *stack);
 void	print_reverse_stack(t_stack *stack);

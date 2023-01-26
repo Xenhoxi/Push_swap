@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/26 03:03:16 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:14:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	push_back(t_stack *stack, int new_value)
 {
 	t_stack	*tmp_prev;
 
-	while (stack->next)
-		stack = stack->next;
+	if (stack)
+		while (stack->next)
+			stack = stack->next;
 	stack->next = malloc(sizeof(t_stack));
 	tmp_prev = stack;
 	stack = stack->next;
@@ -25,22 +26,40 @@ void	push_back(t_stack *stack, int new_value)
 	stack->prev = tmp_prev;
 }
 
-t_stack	*fill_stack(int argc, char **argv)
+t_stack	*fill_stack_split(int argc, char **argv)
 {
 	t_stack	*stack;
 	t_stack	*stack_first;
-	int		len_args;
 	int		i;
 
 	i = 0;
-	len_args = array_len(argv);
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
 	stack->value = ft_atoi(argv[i]);
 	stack_first = stack;
-	while (++i < argc || i < len_args)
+	while (++i < argc)
 		push_back(stack, ft_atoi(argv[i]));
+	return (stack_first);
+}
+
+t_stack	*fill_stack_argv(int argc, char **argv)
+{
+	t_stack	*stack;
+	t_stack	*stack_first;
+	int		i;
+
+	i = 1;
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->value = ft_atoi(argv[i]);
+	stack_first = stack;
+	while (i < argc - 1)
+	{
+		i++;
+		push_back(stack, ft_atoi(argv[i]));
+	}
 	return (stack_first);
 }
 
