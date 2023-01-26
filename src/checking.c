@@ -6,17 +6,11 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/25 14:05:19 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/26 02:54:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
-
-void	error(void)
-{
-	write(1, "Error\n", 6);
-	exit(1);
-}
 
 int	only_digit(char	**input_list, int argc)
 {
@@ -105,13 +99,15 @@ int	checking(int argc, char **argv)
 {
 	char	**input_list;
 
+	if (argc <= 1)
+		write(1, "Error\n", 6);
 	if (argc == 2)
 	{
 		input_list = ft_split(argv[1], ' ');
 		if (check_argv(input_list, array_len(input_list)))
 			return (1);
 		else
-			error();
+			error(input_list);
 	}
 	if (argc > 2)
 	{
@@ -119,7 +115,7 @@ int	checking(int argc, char **argv)
 		if (check_argv(input_list, argc - 1))
 			return (1);
 		else
-			error();
+			error(input_list);
 	}
 	return (0);
 }

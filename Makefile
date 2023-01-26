@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/01/25 13:32:47 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/01/26 03:06:17 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,9 @@ NAME = push_swap
 
 SRC = src/push_swap.c \
 	src/checking.c \
+	src/checking_2.c \
+	src/stack_gestion.c \
+	src/utils.c
 
 CC = gcc
 

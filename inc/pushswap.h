@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/25 13:11:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/26 03:03:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,31 @@
 # include <limits.h>
 # include "libft/libft.h"
 
+// Stuct pour mes 2 stacks
 typedef struct s_stack
 {
 	int				value;
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	struct s_stack	*first;
+	struct s_stack	*last;
 }					t_stack;
 
-typedef struct s_stack_info
-{
-	struct s_stack	*s1_first;
-	struct s_stack	*s1_last;
-}					t_stack_info;
-
+// checking.c && checking_2.c
 int		checking(int argc, char **argv);
-int		array_len(char **argv);
+int		check_argv(char	**input_list, int argc);
+int		only_digit(char	**input_list, int argc);
+int		only_int(char **input_list);
 int		identical_numbers(long long *int_array, int input_len);
-void	error(void);
+void	error(char **input_list);
+
+// stack_gestion.c
+t_stack	*fill_stack(int argc, char **argv);
+void	push_back(t_stack *stack, int new_value);
+void	print_stack(t_stack *stack);
+void	print_reverse_stack(t_stack *stack);
+
+// utils.c
+int		array_len(char **argv);
 
 #endif
