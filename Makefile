@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/01/26 03:06:17 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/01/27 14:07:08 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,5 +33,6 @@ clean:
 
 fclean: clean
 	/bin/rm -f $(NAME)
+	rm -f $(OBJECTS)
 
 re: fclean all

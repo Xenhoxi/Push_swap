@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/27 13:56:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:08:07 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_stack	*fill_stack_split(int argc, char **argv)
 	stack->value = ft_atoi(argv[i]);
 	stack_first = stack;
 	stack->next = 0;
+	stack->prev = 0;
 	while (++i < argc)
 		push_back(stack, ft_atoi(argv[i]));
 	return (stack_first);
