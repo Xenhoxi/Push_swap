@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/27 15:15:01 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/30 00:18:20 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_stack	*fill_stack_argv(int argc, char **argv);
 void	push_back(t_stack *stack, int new_value);
 void	print_stack(t_stack *stack);
 void	print_reverse_stack(t_stack *stack);
+int		stacklen(t_stack *stack);
 
 // utils.c
 int		array_len(char **argv);
