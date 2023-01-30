@@ -5,13 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 15:14:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/27 15:25:23 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/01/30 12:08:58 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/01/30 14:32:46 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/pushswap.h"
+#include "../../inc/pushswap.h"
 
-void	swap(void)
+void	sa(t_stack *stack)
 {
+	int	swap;
+
+	swap = 0;
+	if (stack && stack->next)
+	{
+		swap = stack->value;
+		stack->value = stack->next->value;
+		stack->next->value = swap;
+	}
+	write(1, "sa\n", 3);
+}
+
+void	sb(t_stack *stack)
+{
+	int	swap;
+
+	swap = 0;
+	if (stack && stack->next)
+	{
+		swap = stack->value;
+		stack->value = stack->next->value;
+		stack->next->value = swap;
+	}
+	write(1, "sb\n", 3);
+}
+
+void	ss(t_stack *stack_1, t_stack *stack_2)
+{
+	int	swap;
+
+	if (stack_1 && stack_1->next)
+	{
+		swap = stack_1->value;
+		stack_1->value = stack_1->next->value;
+		stack_1->next->value = swap;
+	}
+	swap = 0;
+	if (stack_2 && stack_2->next)
+	{
+		swap = stack_2->value;
+		stack_2->value = stack_2->next->value;
+		stack_2->next->value = swap;
+	}
+	write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 00:14:04 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 00:24:23 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:21:57 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,15 @@ int	stacklen(t_stack *stack)
 	}
 	return (i);
 }
+
+// t_stack	*stack_init(t_stack *stack)
+// {
+// 	stack = malloc(sizeof(t_stack));
+// 	stack->next = 0;
+// 	stack->prev = 0;
+// 	stack->value = 0;
+// 	stack->index = 0;
+// 	stack->first = stack;
+// 	stack->last = stack;
+// 	return (stack);
+// }

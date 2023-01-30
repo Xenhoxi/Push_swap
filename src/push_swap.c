@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 00:28:23 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:29:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ t_stack	*set_stack_1(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_1;
+	t_stack	*stack_2;
 
 	stack_1 = set_stack_1(argc, argv);
+	stack_2 = NULL;
 	print_stack(stack_1);
-	write(1, "\n", 1);
-	print_reverse_stack(stack_1);
-	printf("Taille stack : %d\n ", stacklen(stack_1));
+	push_back(stack_2, 12);
+	// printf("Taille stack : %d\n", stacklen(stack_1));
+	// print_stack(stack_1);
 	return (0);
 }
 
@@ -46,9 +48,6 @@ int	main(int argc, char **argv)
 	Essayer si un pointeur simple ne fait pas deja ce que je veux faire en dessous.
 	utiliser un pointeur sur pointeur pour toujours partir de meme endroit
 	Coder les fonctions de modifications des piles :
-	sa : Intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
-	sb : Intervertit les 2 premiers éléments au sommet de la pile b. Ne fait rien s’il n’y en a qu’un ou aucun.
-	ss : sa et sb en même temps.
 	pa : Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
 	pb : Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.
 	ra : Décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.

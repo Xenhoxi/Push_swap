@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/26 02:54:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:41:31 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	checking(int argc, char **argv)
 		if (check_argv(input_list, array_len(input_list)))
 			return (1);
 		else
-			error(input_list);
+			error();
 	}
 	if (argc > 2)
 	{
@@ -115,9 +115,7 @@ int	checking(int argc, char **argv)
 		if (check_argv(input_list, argc - 1))
 			return (1);
 		else
-			error(input_list);
+			error();
 	}
 	return (0);
 }
-
-// Free input_list (le resultat du spit)

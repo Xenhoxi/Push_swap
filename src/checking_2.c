@@ -6,20 +6,17 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:51:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/28 03:47:13 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:35:57 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
 
-void	error(char **input_list)
+void	error(void)
 {
 	int	i;
 
 	i = 0;
-	// free(input_list);
-	while (i < array_len(input_list))
-		free(input_list[i++]);
 	write(1, "Error\n", 6);
 	exit(1);
 }
