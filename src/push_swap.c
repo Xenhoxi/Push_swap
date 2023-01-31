@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 14:29:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:37:23 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
 
-t_stack	*set_stack_1(int argc, char **argv)
+void	set_stack_1(int argc, char **argv, t_stack **stack)
 {
 	char			**input_list;
 
@@ -22,23 +22,23 @@ t_stack	*set_stack_1(int argc, char **argv)
 		if (argc == 2)
 		{
 			input_list = ft_split(argv[1], ' ');
-			return (fill_stack_split(array_len(input_list), input_list));
+			fill_stack_split(array_len(input_list), input_list, stack);
 		}
 		if (argc > 2)
-			return (fill_stack_argv(argc, argv));
+			fill_stack_argv(argc, argv, stack);
 	}
-	return (NULL);
 }
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_1;
-	t_stack	*stack_2;
+	t_stack	**stack_1;
+	t_stack	**stack_2;
 
-	stack_1 = set_stack_1(argc, argv);
+	stack_1 = NULL;
 	stack_2 = NULL;
-	print_stack(stack_1);
-	push_back(stack_2, 12);
+	set_stack_1(argc, argv, stack_1);
+	print_stack(*stack_1);
+	// push_back(stack_2, 12);
 	// printf("Taille stack : %d\n", stacklen(stack_1));
 	// print_stack(stack_1);
 	return (0);

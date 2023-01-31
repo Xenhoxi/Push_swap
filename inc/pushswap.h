@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 14:35:42 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:36:41 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct s_stack
 	struct s_stack	*last;
 }					t_stack;
 
+// push_swap.c
+void	set_stack_1(int argc, char **argv, t_stack **stack);
+
 // checking.c && checking_2.c
 int		checking(int argc, char **argv);
 int		check_argv(char	**input_list, int argc);
@@ -41,9 +44,9 @@ int		identical_numbers(long long *int_array, int input_len);
 void	error(void);
 
 // stack_gestion.c
-t_stack	*fill_stack_split(int argc, char **argv);
-t_stack	*fill_stack_argv(int argc, char **argv);
-void	push_back(t_stack *stack, int new_value);
+void	fill_stack_split(int argc, char **argv, t_stack **stack);
+void	fill_stack_argv(int argc, char **argv, t_stack **stack);
+void	push_back(t_stack **stack_, int new_value);
 void	print_stack(t_stack *stack);
 void	print_reverse_stack(t_stack *stack);
 
