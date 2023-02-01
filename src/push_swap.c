@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/01 14:09:27 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:39:31 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(int argc, char **argv)
 	set_stack_1(argc, argv, &stack_1);
 	print_stack(stack_1->first);
 	// print_stack(stack_2->first);
+	// print_stack(stack_1);
 	return (0);
 }
 
