@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/31 15:37:23 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:59:42 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,13 @@ void	set_stack_1(int argc, char **argv, t_stack **stack)
 
 int	main(int argc, char **argv)
 {
-	t_stack	**stack_1;
-	t_stack	**stack_2;
+	t_stack	*stack_1;
+	t_stack	*stack_2;
 
 	stack_1 = NULL;
 	stack_2 = NULL;
-	set_stack_1(argc, argv, stack_1);
-	print_stack(*stack_1);
-	// push_back(stack_2, 12);
-	// printf("Taille stack : %d\n", stacklen(stack_1));
-	// print_stack(stack_1);
+	set_stack_1(argc, argv, &stack_1);
+	print_stack(stack_1->first);
 	return (0);
 }
 

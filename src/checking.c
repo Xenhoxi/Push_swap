@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 14:41:31 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:00:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	identical_numbers(long long *int_array, int input_len)
 		u = i;
 		i++;
 	}
-	free(int_array);
+	// free(int_array);
 	return (0);
 }
 
