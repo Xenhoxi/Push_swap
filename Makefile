@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/01/30 12:43:34 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/06 01:42:17 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,11 @@ $(NAME): $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) $(BONUS)
+	make -C inc/libft clean
 
 fclean: clean
 	/bin/rm -f $(NAME)
 	rm -f $(OBJECTS)
+	make -C inc/libft fclean
 
 re: fclean all
