@@ -19,8 +19,10 @@
 
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
+	int				value;
+	int				rank;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }					t_list;
 
 int			ft_atoi(const char *str);
@@ -58,7 +60,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_itoa(int n);
 char		**ft_split(char const *s, char c);
-t_list		*ft_lstnew(void *content);
+t_list		*ft_lstnew(int content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);

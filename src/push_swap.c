@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/06 02:19:22 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 14:04:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
 
-void	set_stack_1(int argc, char **argv, t_stack **stack)
+void	set_stack_1(int argc, char **argv, t_list **stack)
 {
 	char			**input_list;
 
@@ -31,8 +31,8 @@ void	set_stack_1(int argc, char **argv, t_stack **stack)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_1;
-	t_stack	*stack_2;
+	t_list	*stack_1;
+	t_list	*stack_2;
 
 	stack_1 = NULL;
 	stack_2 = NULL;
@@ -41,8 +41,6 @@ int	main(int argc, char **argv)
 	print_stack(stack_1);
 	push_back(&stack_2, 12);
 	print_stack(stack_2);
-	// print_stack(stack_2->first);
-	// print_stack(stack_1);
 	return (0);
 }
 

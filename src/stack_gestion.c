@@ -6,45 +6,22 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/06 02:16:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 14:19:58 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
 
-void	push_back(t_stack **stack, int new_value)
-{
-	t_stack	*tmp_prev;
-	t_stack	*stackfirst;
-
-	if (!(*stack))
-		stacknew(stack, new_value);
-	else
-	{
-		while ((*stack)->next)
-			(*stack) = (*stack)->next;
-		(*stack)->next = malloc(sizeof(t_stack));
-		tmp_prev = (*stack);
-		stackfirst = (*stack)->first;
-		(*stack) = (*stack)->next;
-		(*stack)->value = new_value;
-		(*stack)->next = 0;
-		(*stack)->rank = 0;
-		(*stack)->prev = tmp_prev;
-		(*stack)->first = stackfirst;
-	}
-}
-
-void	fill_stack_split(int argc, char **argv, t_stack **stack)
+void	fill_stack_split(int argc, char **argv, t_list **stack)
 {
 	int		i;
 
 	i = 0;
 	while (i < argc)
-		push_back(stack, ft_atoi(argv[i++]));
+		ft_lstadd_back(stack, ft_lstnew(ft_atoi(argv[i++])));
 }
 
-void	fill_stack_argv(int argc, char **argv, t_stack **stack)
+void	fill_stack_argv(int argc, char **argv, t_list **stack)
 {
 	int		i;
 
@@ -53,9 +30,9 @@ void	fill_stack_argv(int argc, char **argv, t_stack **stack)
 		push_back(stack, ft_atoi(argv[i++]));
 }
 
-void	print_stack(t_stack *stack)
+void	print_list(t_list *stack)
 {
-	stackfirst(&stack);
+	// stackfirst(&stack);
 	while (stack)
 	{
 		printf("%d\n", stack->value);
@@ -63,7 +40,7 @@ void	print_stack(t_stack *stack)
 	}
 }
 
-void	print_reverse_stack(t_stack *stack)
+void	print_reverse_stack(t_list *stack)
 {
 	while (stack->next)
 		stack = stack->next;
