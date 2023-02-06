@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/31 15:36:41 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 02:09:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 typedef struct s_stack
 {
 	int				value;
-	int				index;
+	int				rank;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	struct s_stack	*first;
@@ -53,6 +53,9 @@ void	print_reverse_stack(t_stack *stack);
 // stack_gestion_2.c
 int		stacklen(t_stack *stack);
 t_stack	*stack_init(t_stack *stack);
+void	stackfirst(t_stack **stack_);
+void	stacklast(t_stack **stack_);
+void	stacknew(t_stack **stack, int new_value);
 
 // utils.c
 int		array_len(char **argv);

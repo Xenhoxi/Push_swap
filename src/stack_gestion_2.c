@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 00:14:04 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/02 16:31:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 02:13:14 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,29 @@ int	stacklen(t_stack *stack)
 		i++;
 	}
 	return (i);
+}
+
+void	stacklast(t_stack **stack)
+{
+	if ((*stack))
+		while ((*stack)->next)
+			(*stack) = (*stack)->next;
+}
+
+void	stackfirst(t_stack **stack)
+{
+	if (*stack)
+		while ((*stack)->prev)
+			(*stack) = (*stack)->prev;
+}
+
+void	stacknew(t_stack **stack, int new_value)
+{
+	(*stack) = malloc(sizeof(t_stack));
+	(*stack)->value = new_value;
+	(*stack)->next = 0;
+	(*stack)->prev = 0;
+	(*stack)->rank = 0;
 }
 
 // stack_last(t_stack **stack)

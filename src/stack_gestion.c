@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/01 14:43:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 02:16:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,7 @@ void	push_back(t_stack **stack, int new_value)
 	t_stack	*stackfirst;
 
 	if (!(*stack))
-	{
-		(*stack) = malloc(sizeof(t_stack));
-		(*stack)->value = new_value;
-		(*stack)->next = 0;
-		(*stack)->prev = 0;
-		(*stack)->first = (*stack);
-	}
+		stacknew(stack, new_value);
 	else
 	{
 		while ((*stack)->next)
@@ -35,6 +29,7 @@ void	push_back(t_stack **stack, int new_value)
 		(*stack) = (*stack)->next;
 		(*stack)->value = new_value;
 		(*stack)->next = 0;
+		(*stack)->rank = 0;
 		(*stack)->prev = tmp_prev;
 		(*stack)->first = stackfirst;
 	}
@@ -60,6 +55,7 @@ void	fill_stack_argv(int argc, char **argv, t_stack **stack)
 
 void	print_stack(t_stack *stack)
 {
+	stackfirst(&stack);
 	while (stack)
 	{
 		printf("%d\n", stack->value);

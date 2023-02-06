@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/06 01:39:53 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 02:19:22 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,18 @@ int	main(int argc, char **argv)
 	stack_1 = NULL;
 	stack_2 = NULL;
 	set_stack_1(argc, argv, &stack_1);
-	print_stack(stack_1->first);
-	print_stack(stack_2->first);
+	stackfirst(&stack_1);
+	print_stack(stack_1);
+	push_back(&stack_2, 12);
+	print_stack(stack_2);
+	// print_stack(stack_2->first);
 	// print_stack(stack_1);
 	return (0);
 }
 
 /*
 	Essayer si un pointeur simple ne fait pas deja ce que je veux faire en dessous.
-	utiliser un pointeur sur pointeur pour toujours partir de meme endroit
+	utiliser un pointeur sur pointeur pour toujours partir du meme endroit
 	Coder les fonctions de modifications des piles :
 	pa : Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
 	pb : Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.
