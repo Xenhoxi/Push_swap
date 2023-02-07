@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/06 14:19:58 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 23:25:10 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	fill_stack_argv(int argc, char **argv, t_list **stack)
 
 	i = 1;
 	while (i < argc)
-		push_back(stack, ft_atoi(argv[i++]));
+		ft_lstadd_back(stack, ft_lstnew(ft_atoi(argv[i++])));
 }
 
 void	print_list(t_list *stack)
 {
-	// stackfirst(&stack);
+	printf("---\n");
 	while (stack)
 	{
 		printf("%d\n", stack->value);

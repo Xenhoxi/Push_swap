@@ -6,12 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:27:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 14:06:16 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:40:07 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
 
-void	pa(t_stack *stack_1, t_stack *stack_2)
-{
-}
+// void	pa(t_stack *stack_1, t_stack *stack_2)
+// {
+// }

@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:08:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/30 14:32:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:38:59 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/pushswap.h"
 
-void	sa(t_stack *stack)
+void	sa(t_list *stack)
 {
 	int	swap;
 
@@ -26,7 +26,7 @@ void	sa(t_stack *stack)
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack *stack)
+void	sb(t_list *stack)
 {
 	int	swap;
 
@@ -40,7 +40,7 @@ void	sb(t_stack *stack)
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack *stack_1, t_stack *stack_2)
+void	ss(t_list *stack_1, t_list *stack_2)
 {
 	int	swap;
 

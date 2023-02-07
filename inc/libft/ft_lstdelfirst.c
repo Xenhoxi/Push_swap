@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelfirst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 23:47:28 by ljerinec          #+#    #+#             */
-/*   Updated: 2022/11/25 23:12:58 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/02/06 21:45:19 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/02/06 22:48:31 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstdelfirst(t_list **lst)
 {
-	t_list	*contenu;
-	t_list	*list;
-	t_list	*tmp;
+	t_list	*temp;
 
-	if (!lst || !f)
-		return (0);
-	contenu = 0;
-	while (lst)
-	{
-		tmp = f(lst->content);
-		list = ft_lstnew(tmp);
-		if (!list)
-		{
-			free(tmp);
-			ft_lstclear(&contenu, del);
-			return (0);
-		}
-		ft_lstadd_back(&contenu, list);
-		lst = lst->next;
-	}
-	return (contenu);
+	temp = (*lst)->next;
+	if (*lst)
+		free(*lst);
+	temp->prev = 0;
+	*lst = temp;
 }

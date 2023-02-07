@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 22:44:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2022/11/23 23:38:58 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 21:32:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!*lst)
+	{
+		new->prev = 0;
 		(*lst) = new;
+	}
 	else
+	{
+		new->prev = ft_lstlast(*lst);
 		ft_lstlast(*lst)->next = new;
+	}
 }

@@ -47,16 +47,15 @@ SRC = ft_strlen.c \
 	ft_striteri.c \
 	ft_itoa.c \
 	ft_split.c \
-
-SRC_BONUS = ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstdelfirst.c \
+	ft_lstdellast.c \
 
 OBJECTS = $(SRC:.c=.o)
 BONUS = $(SRC_BONUS:.c=.o)

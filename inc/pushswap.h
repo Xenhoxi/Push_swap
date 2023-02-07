@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/06 14:07:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/06 23:25:21 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	error(void);
 void	fill_stack_split(int argc, char **argv, t_list **stack);
 void	fill_stack_argv(int argc, char **argv, t_list **stack);
 void	push_back(t_list **stack_, int new_value);
-void	print_stack(t_list *stack);
+void	print_list(t_list *stack);
 void	print_reverse_stack(t_list *stack);
 
 // stack_gestion_2.c

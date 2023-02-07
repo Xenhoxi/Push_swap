@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdellast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 19:12:51 by ljerinec          #+#    #+#             */
-/*   Updated: 2022/11/23 21:39:35 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/02/06 22:49:55 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/02/06 23:16:19 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstdellast(t_list **lst)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	while ((*lst)->next->next)
+		(*lst) = (*lst)->next;
+	if ((*lst)->next)
+		free((*lst)->next);
+	(*lst)->next = 0;
 }
