@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:32:52 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 16:41:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:21:59 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ra(t_list **stack_1)
 {
-	if (stack_1)
+	if (stack_1 && *stack_1)
 	{
 		ft_lstadd_back(stack_1, ft_lstnew((*stack_1)->value));
 		ft_lstdelfirst(stack_1);
@@ -24,7 +24,7 @@ void	ra(t_list **stack_1)
 
 void	rb(t_list **stack_2)
 {
-	if (stack_2)
+	if (stack_2 && *stack_2)
 	{
 		ft_lstadd_back(stack_2, ft_lstnew((*stack_2)->value));
 		ft_lstdelfirst(stack_2);
@@ -34,7 +34,7 @@ void	rb(t_list **stack_2)
 
 void	rr(t_list **stack_1, t_list **stack_2)
 {
-	if (stack_1 && stack_2)
+	if (stack_1 && stack_2 && *stack_1 && *stack_2)
 	{
 		ft_lstadd_back(stack_1, ft_lstnew((*stack_1)->value));
 		ft_lstdelfirst(stack_1);

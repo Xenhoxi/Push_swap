@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 16:43:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:06:19 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ t_list	*stack_init(t_list *stack);
 void	stackfirst(t_list **stack_);
 void	stacklast(t_list **stack_);
 void	stacknew(t_list **stack, int new_value);
-
 
 // utils.c
 int		array_len(char **argv);

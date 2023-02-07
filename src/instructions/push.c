@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:27:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 16:27:15 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:14:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_list **stack_1, t_list **stack_2)
 {
-	if (stack_2)
+	if (*stack_2 && stack_2)
 	{
 		ft_lstadd_front(stack_1, ft_lstnew((*stack_2)->value));
 		ft_lstdelfirst(stack_2);
