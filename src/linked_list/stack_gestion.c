@@ -6,11 +6,11 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 16:02:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 00:05:41 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/pushswap.h"
+#include "../../inc/pushswap.h"
 
 void	fill_stack_split(int argc, char **argv, t_list **stack)
 {
@@ -37,7 +37,15 @@ void	print_list(t_list *stack)
 		printf("%d\n", stack->value);
 		stack = stack->next;
 	}
-	printf("---\n");
+}
+
+void	print_rank(t_list *stack)
+{
+	while (stack)
+	{
+		printf("%d\n", stack->rank);
+		stack = stack->next;
+	}
 }
 
 void	print_reverse_stack(t_list *stack)

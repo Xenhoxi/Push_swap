@@ -1,16 +1,71 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checking.c                                         :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/01 14:00:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 00:21:12 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/pushswap.h"
+#include "../../inc/pushswap.h"
+
+void	set_stack_1(int argc, char **argv, t_list **stack)
+{
+	char	**input_list;
+	int		i;	
+
+	i = 0;
+	if (checking(argc, argv))
+	{
+		write(1, "Inputs Ok !\n\n", 14);
+		if (argc == 2)
+		{
+			input_list = ft_split(argv[1], ' ');
+			fill_stack_split(array_len(input_list), input_list, stack);
+			while (input_list[i])
+				free(input_list[i++]);
+			free(input_list);
+		}
+		if (argc > 2)
+			fill_stack_argv(argc, argv, stack);
+	}
+}
+
+int	checking(int argc, char **argv)
+{
+	char	**input_list;
+
+	if (argc <= 1)
+		write(1, "Error\n", 6);
+	if (argc == 2)
+	{
+		input_list = ft_split(argv[1], ' ');
+		if (check_argv(input_list, array_len(input_list)))
+			return (1);
+		else
+			error();
+	}
+	if (argc > 2)
+	{
+		input_list = &argv[1];
+		if (check_argv(input_list, argc - 1))
+			return (1);
+		else
+			error();
+	}
+	return (0);
+}
+
+int	check_argv(char	**input_list, int argc)
+{
+	if (only_digit(input_list, argc))
+		if (only_int(input_list))
+			return (1);
+	return (0);
+}
 
 int	only_digit(char	**input_list, int argc)
 {
@@ -24,7 +79,7 @@ int	only_digit(char	**input_list, int argc)
 		while (input_list[i][u])
 		{
 			if ((input_list[i][u] >= '0' && input_list[i][u] <= '9')
-				|| input_list[i][u] == '-')
+				|| (input_list[i][u] == '-' && u == 0))
 				u++;
 			else
 				return (0);
@@ -57,65 +112,4 @@ int	only_int(char **input_list)
 	if (identical_numbers(numbers, input_list_len))
 		return (0);
 	return (1);
-}
-
-int	identical_numbers(long long *int_array, int input_len)
-{
-	int	i;
-	int	u;
-
-	u = 1;
-	i = 0;
-	while (i < input_len)
-	{
-		while (u < input_len)
-		{
-			if (i != u)
-			{
-				if (int_array[i] == int_array[u])
-				{
-					free(int_array);
-					return (1);
-				}
-			}
-			u++;
-		}
-		u = i;
-		i++;
-	}
-	// free(int_array);
-	return (0);
-}
-
-int	check_argv(char	**input_list, int argc)
-{
-	if (only_digit(input_list, argc))
-		if (only_int(input_list))
-			return (1);
-	return (0);
-}
-
-int	checking(int argc, char **argv)
-{
-	char	**input_list;
-
-	if (argc <= 1)
-		write(1, "Error\n", 6);
-	if (argc == 2)
-	{
-		input_list = ft_split(argv[1], ' ');
-		if (check_argv(input_list, array_len(input_list)))
-			return (1);
-		else
-			error();
-	}
-	if (argc > 2)
-	{
-		input_list = &argv[1];
-		if (check_argv(input_list, argc - 1))
-			return (1);
-		else
-			error();
-	}
-	return (0);
 }

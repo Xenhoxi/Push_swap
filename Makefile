@@ -6,22 +6,26 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/02/07 18:31:18 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/08 00:04:10 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = src/push_swap.c \
-	src/checking.c \
-	src/checking_2.c \
-	src/stack_gestion.c \
-	src/utils.c \
-	src/stack_gestion_2.c \
+	src/parsing/parsing.c \
+	src/parsing/parsing_2.c \
+	src/linked_list/stack_gestion.c \
+	src/linked_list/stack_gestion_2.c \
 	src/instructions/swap.c \
 	src/instructions/push.c \
 	src/instructions/reverse_rotate.c \
 	src/instructions/rotate.c \
+	src/sorting/ranking.c \
+	src/sorting/sorting_3.c \
+	src/sorting/sorting_5.c \
+	src/sorting/sorting_100.c \
+	src/sorting/sorting_500.c \
 
 CC = gcc
 
