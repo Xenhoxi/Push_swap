@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:22:18 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 00:45:48 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,24 @@ int	main(int argc, char **argv)
 	print_list(stack_1);
 	printf("\nStack 2 :\n");
 	print_list(stack_2);
-	// print_list(stack_1);
-	// system("leaks push_swap");
+	system("leaks push_swap");
 	return (0);
+}
+
+void	choose_sorting_algo(t_list *stack)
+{
+	int	stack_len;
+
+	stack_len = stacklen(stack);
+	if (stack_len == 2)
+		sort("Le nombre de nombres dans la piles et la fonction choisie quelle algo")
 }
 
 /*
 	Suite ...
+	donne le nombres d'items de la pile et la fonction choisie quelle algo
+	ou 
+	la fonction choisie directement le bon algo avec des elseif
 	Algo de tri pour 3 nombres
 	Algo de tri pour 5 nombres
 	Algo de tri pour 100 nombres

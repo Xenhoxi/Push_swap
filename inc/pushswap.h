@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:23:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 00:36:28 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "libft/libft.h"
 
 // push_swap.c
+int		main(int argc, char **argv);
 
 // parsing.c 
 void	set_stack_1(int argc, char **argv, t_list **stack);
@@ -47,15 +48,19 @@ int		stacklen(t_list *stack);
 void	stackfirst(t_list **stack_);
 void	stacklast(t_list **stack_);
 
-// instructions
+// --- OPERATEURS ---
+// swap.c
 void	sa(t_list *stack);
 void	sb(t_list *stack);
 void	ss(t_list *stack_1, t_list *stack_2);
+// push.c
 void	pa(t_list **stack_1, t_list **stack_2);
 void	pb(t_list **stack_1, t_list **stack_2);
+// rotate.c
 void	ra(t_list **stack_1);
 void	rb(t_list **stack_2);
 void	rr(t_list **stack_1, t_list **stack_2);
+// reverse_rotate.c
 void	rra(t_list **stack_1);
 void	rrb(t_list **stack_2);
 void	rrr(t_list **stack_1, t_list **stack_2);
