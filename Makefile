@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/02/06 20:46:12 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/07 13:27:59 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC = src/push_swap.c \
 	src/stack_gestion.c \
 	src/utils.c \
 	src/stack_gestion_2.c \
-	src/instructions/swap.c
+	src/instructions/swap.c \
+	src/instructions/push.c \
 
 CC = gcc
 

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/06 23:26:00 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:33:23 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ int	main(int argc, char **argv)
 	stack_1 = NULL;
 	stack_2 = NULL;
 	set_stack_1(argc, argv, &stack_1);
-	ft_lstadd_front(&stack_1, ft_lstnew(-12));
 	print_list(stack_1);
-	ft_lstdelfirst(&stack_1);
+	print_list(stack_2);
+	// ft_lstadd_back(&stack_2, ft_lstnew(0));
+	ft_lstadd_front(&stack_2, ft_lstnew(0));
+	pb(&stack_1, &stack_2);
+	pb(&stack_1, &stack_2);
+	pb(&stack_1, &stack_2);
 	print_list(stack_1);
-	ft_lstdellast(&stack_1);
-	print_list(stack_1);
-	// print_reverse_stack(stack_1);
 	print_list(stack_2);
 	return (0);
 }
