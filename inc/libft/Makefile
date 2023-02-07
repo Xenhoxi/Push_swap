@@ -52,8 +52,6 @@ SRC = ft_strlen.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
-	ft_lstdelone.c \
-	ft_lstclear.c \
 	ft_lstdelfirst.c \
 	ft_lstdellast.c \
 

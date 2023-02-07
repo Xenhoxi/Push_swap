@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 16:04:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:52:43 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ int	main(int argc, char **argv)
 	pb(&stack_1, &stack_2);
 	pb(&stack_1, &stack_2);
 	pb(&stack_1, &stack_2);
+	printf("\n");
+	printf("Stack 1 :\n");
+	print_list(stack_1);
+	printf("Stack 2 :\n");
+	print_list(stack_2);
+	// rra(&stack_1);
+	rrb(&stack_2);
+	// rrr(&stack_1, &stack_2);
+	printf("\n");
 	printf("Stack 1 :\n");
 	print_list(stack_1);
 	printf("Stack 2 :\n");

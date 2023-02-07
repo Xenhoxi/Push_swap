@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 16:03:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:43:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,11 @@ void	sb(t_list *stack);
 void	ss(t_list *stack_1, t_list *stack_2);
 void	pa(t_list **stack_1, t_list **stack_2);
 void	pb(t_list **stack_1, t_list **stack_2);
+void	ra(t_list **stack_1);
+void	rb(t_list **stack_2);
+void	rr(t_list **stack_1, t_list **stack_2);
+void	rra(t_list **stack_1);
+void	rrb(t_list **stack_2);
+void	rrr(t_list **stack_1, t_list **stack_2);
 
 #endif
