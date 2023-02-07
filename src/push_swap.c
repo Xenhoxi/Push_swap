@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/07 18:15:40 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:31:43 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 	print_list(stack_1);
 	printf("Stack 2 :\n");
 	print_list(stack_2);
-	rra(&stack_1);
-	rrb(&stack_2);
+	ra(&stack_1);
+	rb(&stack_2);
 	printf("\n");
 	printf("Stack 1 :\n");
 	print_list(stack_1);
