@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/02/08 00:04:10 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/08 11:54:41 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC = src/push_swap.c \
 	src/instructions/push.c \
 	src/instructions/reverse_rotate.c \
 	src/instructions/rotate.c \
-	src/sorting/ranking.c \
+	src/sorting/sorting_utils.c \
 	src/sorting/sorting_3.c \
 	src/sorting/sorting_5.c \
 	src/sorting/sorting_100.c \

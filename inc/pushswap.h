@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:36:28 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:17:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,14 @@
 # include <limits.h>
 # include "libft/libft.h"
 
+typedef struct s_list_data
+{
+	t_list	*first;
+	int		length;
+}			t_list_data;
+
 // push_swap.c
-int		main(int argc, char **argv);
+void	sorting(t_list **stack_1, t_list **stack_2);
 
 // parsing.c 
 void	set_stack_1(int argc, char **argv, t_list **stack);
@@ -65,7 +71,8 @@ void	rra(t_list **stack_1);
 void	rrb(t_list **stack_2);
 void	rrr(t_list **stack_1, t_list **stack_2);
 
-// ranking.c 
+// sorting_utils.c 
 void	ranking(t_list *stack);
+int		is_sort(t_list *stack);
 
 #endif

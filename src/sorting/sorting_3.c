@@ -6,7 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:32:06 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:32:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:21:31 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../inc/pushswap.h"
+
+// void	sorting_3(t_list *stack)
+// {
+// }

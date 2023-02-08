@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:45:48 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:38:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,35 @@ int	main(int argc, char **argv)
 	stack_2 = NULL;
 	set_stack_1(argc, argv, &stack_1);
 	ranking(stack_1);
-	print_rank(stack_1);
+	if (is_sort(stack_1))
+	{
+		printf("C'est deja Trié chien !\n");
+		exit(1);
+	}
+	sorting(&stack_1, &stack_2);
 	printf("Stack 1 :\n");
 	print_list(stack_1);
 	printf("\nStack 2 :\n");
 	print_list(stack_2);
-	system("leaks push_swap");
+	// system("leaks push_swap");
 	return (0);
 }
 
-void	choose_sorting_algo(t_list *stack)
+void	sorting(t_list **stack_1, t_list **stack_2)
 {
 	int	stack_len;
 
-	stack_len = stacklen(stack);
-	if (stack_len == 2)
-		sort("Le nombre de nombres dans la piles et la fonction choisie quelle algo")
+	stack_len = stacklen(*stack_1);
+	(void) stack_2;
+	printf("Nombres d'element dans la stack 1 : %d\n", stack_len);
+	// if (stack_len <= 3)
+		// sorting_3(stack_1);
+	// else if (stack_len <= 5)
+	// 	sorting_5(stack_1, stack_2);
+	// else if (stack_len <= 100)
+	// 	sorting_100(stack_1, stack_2);
+	// else if (stack_len <= 500)
+	// 	sorting_500(stack_1, stack_2);
 }
 
 /*
