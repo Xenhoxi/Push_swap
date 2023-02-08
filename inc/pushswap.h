@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 12:17:45 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:51:23 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 typedef struct s_list_data
 {
 	t_list	*first;
+	t_list	*last;
 	int		length;
 }			t_list_data;
 
@@ -31,7 +32,7 @@ typedef struct s_list_data
 void	sorting(t_list **stack_1, t_list **stack_2);
 
 // parsing.c 
-void	set_stack_1(int argc, char **argv, t_list **stack);
+void	set_stack_1(int argc, char **argv, t_list_data *stack_1);
 int		checking(int argc, char **argv);
 int		check_argv(char	**input_list, int argc);
 int		only_digit(char	**input_list, int argc);
@@ -43,8 +44,8 @@ int		array_len(char **argv);
 void	error(void);
 
 // stack_gestion.c
-void	fill_stack_split(int argc, char **argv, t_list **stack);
-void	fill_stack_argv(int argc, char **argv, t_list **stack);
+void	fill_stack_split(int argc, char **argv, t_list_data *stack);
+void	fill_stack_argv(int argc, char **argv, t_list_data *stack);
 void	print_list(t_list *stack);
 void	print_rank(t_list *stack);
 void	print_reverse_stack(t_list *stack);
@@ -56,20 +57,20 @@ void	stacklast(t_list **stack_);
 
 // --- OPERATEURS ---
 // swap.c
-void	sa(t_list *stack);
-void	sb(t_list *stack);
-void	ss(t_list *stack_1, t_list *stack_2);
+void	sa(t_list_data *stack_);
+void	sb(t_list_data *stack_);
+void	ss(t_list_data *stack__1, t_list_data *stack__2);
 // push.c
-void	pa(t_list **stack_1, t_list **stack_2);
-void	pb(t_list **stack_1, t_list **stack_2);
+void	pa(t_list_data *stack__1, t_list_data *stack__2);
+void	pb(t_list_data *stack__1, t_list_data *stack__2);
 // rotate.c
-void	ra(t_list **stack_1);
-void	rb(t_list **stack_2);
-void	rr(t_list **stack_1, t_list **stack_2);
+void	ra(t_list_data *stack);
+void	rb(t_list_data *stack);
+void	rr(t_list_data *stack__1, t_list_data *stack__2);
 // reverse_rotate.c
-void	rra(t_list **stack_1);
-void	rrb(t_list **stack_2);
-void	rrr(t_list **stack_1, t_list **stack_2);
+void	rra(t_list_data *stack);
+void	rrb(t_list_data *stack);
+void	rrr(t_list_data *stack__1, t_list_data *stack__2);
 
 // sorting_utils.c 
 void	ranking(t_list *stack);

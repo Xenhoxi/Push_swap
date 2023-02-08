@@ -6,16 +6,16 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:21:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:09:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/pushswap.h"
 
-void	set_stack_1(int argc, char **argv, t_list **stack)
+void	set_stack_1(int argc, char **argv, t_list_data *stack_1)
 {
 	char	**input_list;
-	int		i;	
+	int		i;
 
 	i = 0;
 	if (checking(argc, argv))
@@ -24,13 +24,13 @@ void	set_stack_1(int argc, char **argv, t_list **stack)
 		if (argc == 2)
 		{
 			input_list = ft_split(argv[1], ' ');
-			fill_stack_split(array_len(input_list), input_list, stack);
+			fill_stack_split(array_len(input_list), input_list, stack_1);
 			while (input_list[i])
 				free(input_list[i++]);
 			free(input_list);
 		}
 		if (argc > 2)
-			fill_stack_argv(argc, argv, stack);
+			fill_stack_argv(argc, argv, stack_1);
 	}
 }
 
