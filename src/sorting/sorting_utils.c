@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:49:32 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 11:57:04 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:54:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,13 @@ void	ranking(t_list *stack)
 	}
 }
 
-int	is_sort(t_list *stack)
+int	is_sort(t_list_data *stack_data)
 {
+	t_list	*stack;
+
+	stack = stack_data->first;
+	if (!stack)
+		return (0);
 	while (stack->next)
 	{
 		if (stack->value > stack->next->value)

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 14:51:23 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:45:01 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list_data
 }			t_list_data;
 
 // push_swap.c
-void	sorting(t_list **stack_1, t_list **stack_2);
+void	sorting(t_list_data *stack_1, t_list_data *stack_2);
 
 // parsing.c 
 void	set_stack_1(int argc, char **argv, t_list_data *stack_1);
@@ -53,7 +53,7 @@ void	print_reverse_stack(t_list *stack);
 // stack_gestion_2.c
 int		stacklen(t_list *stack);
 void	stackfirst(t_list **stack_);
-void	stacklast(t_list **stack_);
+t_list	*stacklast(t_list *stack);
 
 // --- OPERATEURS ---
 // swap.c
@@ -61,8 +61,8 @@ void	sa(t_list_data *stack_);
 void	sb(t_list_data *stack_);
 void	ss(t_list_data *stack__1, t_list_data *stack__2);
 // push.c
-void	pa(t_list_data *stack__1, t_list_data *stack__2);
-void	pb(t_list_data *stack__1, t_list_data *stack__2);
+void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2);
 // rotate.c
 void	ra(t_list_data *stack);
 void	rb(t_list_data *stack);
@@ -74,6 +74,10 @@ void	rrr(t_list_data *stack__1, t_list_data *stack__2);
 
 // sorting_utils.c 
 void	ranking(t_list *stack);
-int		is_sort(t_list *stack);
+int		is_sort(t_list_data *stack_data);
+
+// sorting_3.c
+void	sorting_3(t_list_data *stack_data);
+int		check_position(t_list_data *stack_data);
 
 #endif

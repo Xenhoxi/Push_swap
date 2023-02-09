@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 13:09:25 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:18:17 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	set_stack_1(int argc, char **argv, t_list_data *stack_1)
 	i = 0;
 	if (checking(argc, argv))
 	{
-		write(1, "Inputs Ok !\n\n", 14);
 		if (argc == 2)
 		{
 			input_list = ft_split(argv[1], ' ');
