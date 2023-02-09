@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 22:45:01 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:57:12 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,14 @@ void	rrb(t_list_data *stack);
 void	rrr(t_list_data *stack__1, t_list_data *stack__2);
 
 // sorting_utils.c 
-void	ranking(t_list *stack);
+void	ranking(t_list_data *stack_data);
 int		is_sort(t_list_data *stack_data);
 
 // sorting_3.c
 void	sorting_3(t_list_data *stack_data);
 int		check_position(t_list_data *stack_data);
+
+// sorting_5.c
+void	sorting_5(t_list_data *stack_1, t_list_data *stack_2);
 
 #endif

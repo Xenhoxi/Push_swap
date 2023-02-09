@@ -6,18 +6,20 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:49:32 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 22:54:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:56:57 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/pushswap.h"
 
-void	ranking(t_list *stack)
+void	ranking(t_list_data *stack_data)
 {
+	t_list	*stack;
 	t_list	*compared;
 	t_list	*start;
 	int		i;
 
+	stack = stack_data->first;
 	start = stack;
 	compared = stack;
 	i = 0;

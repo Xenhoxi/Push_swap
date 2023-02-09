@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 23:31:07 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:58:11 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,22 @@ int	main(int argc, char **argv)
 	init_list(&stack_1);
 	init_list(&stack_2);
 	set_stack_1(argc, argv, &stack_1);
+	ranking(&stack_1);
 	if (is_sort(&stack_1))
 		exit(1);
 	else
 		sorting(&stack_1, &stack_2);
+	print_list(stack_1.first);
 	return (0);
 }
 
 void	sorting(t_list_data *stack_1, t_list_data *stack_2)
 {
 	(void) stack_2;
-	(void) stack_1;
-	if (stack_1->length == 2)
-		sa(stack_1);
-	else if (stack_1->length == 3)
+	if (stack_1->length <= 3)
 		sorting_3(stack_1);
+	else if (stack_1->length <= 5)
+		sorting_5(stack_1, stack_2);
 	// else if (stack_len <= 100)
 	// 	sorting_100(stack_1, stack_2);
 	// else if (stack_len <= 500)
