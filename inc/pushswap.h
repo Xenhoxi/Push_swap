@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/09 15:57:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/11 20:55:41 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ t_list	*stacklast(t_list *stack);
 
 // --- OPERATEURS ---
 // swap.c
-void	sa(t_list_data *stack_);
-void	sb(t_list_data *stack_);
+void	swap(t_list_data *stack_data, char stack_selected);
 void	ss(t_list_data *stack__1, t_list_data *stack__2);
+
 // push.c
 void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2);
@@ -82,5 +82,8 @@ int		check_position(t_list_data *stack_data);
 
 // sorting_5.c
 void	sorting_5(t_list_data *stack_1, t_list_data *stack_2);
+int		find_lower(t_list_data *stack_data_1);
+int		put_lower_in_first(t_list_data *stack_data, int lower_pos);
+int		find_higer(t_list_data *stack_data_1);
 
 #endif

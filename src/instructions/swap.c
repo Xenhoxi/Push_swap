@@ -6,42 +6,33 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:08:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 14:10:48 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:01:49 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/pushswap.h"
 
-void	sa(t_list_data *stack_)
+void	swap(t_list_data *stack_data, char stack_selected)
 {
 	t_list	*stack;
-	int		swap;
+	t_list	*swap;
 
-	stack = stack_->first;
-	swap = 0;
+	stack = stack_data->first;
+	swap = NULL;
 	if (stack && stack->next)
 	{
-		swap = stack->value;
-		stack->value = stack->next->value;
-		stack->next->value = swap;
+		swap = stack->next;
+		stack->next = swap->next;
+		if (stack->next)
+			stack->next->prev = stack;
+		swap->prev = 0;
+		swap->next = stack;
+		stack_data->first = swap;
+		if (stack_selected == 'a')
+			write(1, "sa\n", 3);
+		if (stack_selected == 'b')
+			write(1, "sb\n", 3);
 	}
-	write(1, "sa\n", 3);
-}
-
-void	sb(t_list_data *stack_)
-{
-	t_list	*stack;
-	int		swap;
-
-	stack = stack_->first;
-	swap = 0;
-	if (stack && stack->next)
-	{
-		swap = stack->value;
-		stack->value = stack->next->value;
-		stack->next->value = swap;
-	}
-	write(1, "sb\n", 3);
 }
 
 void	ss(t_list_data *stack__1, t_list_data *stack__2)
