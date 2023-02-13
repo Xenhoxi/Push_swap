@@ -6,33 +6,32 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/12 17:52:27 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/13 13:33:03 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
-
-void	init_list(t_list_data *stack)
-{
-	stack->first = NULL;
-	stack->last = NULL;
-	stack->length = 0;
-}
 
 int	main(int argc, char **argv)
 {
 	t_list_data	stack_1;
 	t_list_data	stack_2;
 
-	init_list(&stack_1);
-	init_list(&stack_2);
+	init_list(&stack_1, 'a');
+	init_list(&stack_2, 'b');
 	set_stack_1(argc, argv, &stack_1);
 	ranking(&stack_1);
-	if (is_sort(&stack_1))
-		exit(1);
-	else
-		sorting(&stack_1, &stack_2);
-	print_list(stack_1.first);
+	// if (is_sort(&stack_1))
+	// 	exit(1);
+	// else
+	// 	sorting(&stack_1, &stack_2);
+	push(&stack_2, &stack_1);
+	push(&stack_1, &stack_2);
+	push(&stack_2, &stack_1);
+	push(&stack_1, &stack_2);
+	push(&stack_1, &stack_2);
+	printf("---\n");
+	print_list(stack_2.first);
 	return (0);
 }
 
@@ -51,8 +50,6 @@ void	sorting(t_list_data *stack_1, t_list_data *stack_2)
 
 /*
 	Suite ...
-	Changer sa et sb pour qu'il intervertisse tout le maillon et non juste la valeur
-	Algo de tri pour 5 nombres
 	Algo de tri pour 100 nombres
 	Algo de tri pour 500 nombres
 */

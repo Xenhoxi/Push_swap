@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:32:06 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/11 17:04:34 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:07:01 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void	sorting_3(t_list_data *stack_data)
 	else if (position == 6)
 	{
 		swap(stack_data, 'a');
-		rra(stack_data);
+		rev_rotate(stack_data, 'a');
 	}
 	else if (position == 4)
-		ra(stack_data);
+		rotate(stack_data, 'a');
 	else if (position == 2)
 	{
 		swap(stack_data, 'a');
-		ra(stack_data);
+		rotate(stack_data, 'a');
 	}
 	else if (position == 5)
-		rra(stack_data);
+		rev_rotate(stack_data, 'a');
 }
 
 int	check_position(t_list_data *stack_data)

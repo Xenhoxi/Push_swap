@@ -6,46 +6,28 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:27:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/11 19:09:01 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/13 13:40:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/pushswap.h"
 
-void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2)
+void	push(t_list_data *stack_data_1, t_list_data *stack_data_2)
 {
-	t_list	**stack_1;
-	t_list	**stack_2;
+	t_list	*tmp;
 
-	stack_1 = &stack_data_1->first;
-	stack_2 = &stack_data_2->first;
-	if (*stack_2 && stack_2)
+	if (stack_data_1->length != 0 && stack_data_1->first)
 	{
-		ft_lstadd_front(stack_1, ft_lstnew((*stack_2)->value));
-		ft_lstdelfirst(stack_2);
-		stack_data_1->length++;
-		stack_data_2->length--;
-		write(1, "pa\n", 3);
-	}
-	stack_data_1->last = stacklast(stack_data_1->first);
-	stack_data_2->last = stacklast(stack_data_2->first);
-}
-
-void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2)
-{
-	t_list	**stack_1;
-	t_list	**stack_2;
-
-	stack_1 = &stack_data_1->first;
-	stack_2 = &stack_data_2->first;
-	if (*stack_1 && stack_1)
-	{
-		ft_lstadd_front(stack_2, ft_lstnew((*stack_1)->value));
-		ft_lstdelfirst(stack_1);
+		tmp = stack_data_1->first;
+		stack_data_1->first = stack_data_1->first->next;
 		stack_data_1->length--;
+		tmp->next = stack_data_2->first;
+		tmp->prev = 0;
+		stack_data_2->first = tmp;
 		stack_data_2->length++;
-		write(1, "pb\n", 3);
+		if (stack_data_1->name == 'b' && stack_data_2->name == 'a')
+			write(1, "pa\n", 3);
+		if (stack_data_1->name == 'a' && stack_data_2->name == 'b')
+			write(1, "pb\n", 3);
 	}
-	stack_data_1->last = stacklast(stack_data_1->first);
-	stack_data_2->last = stacklast(stack_data_2->first);
 }
