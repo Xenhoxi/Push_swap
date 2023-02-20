@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/13 13:19:44 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 09:53:51 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,17 @@ void	sorting_5(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	while (stack_data_1->length > 3)
 	{
 		if (put_lower_in_first(stack_data_1, find_lower(stack_data_1)) == 1)
-			push(stack_data_1, stack_data_2);
+			pb(stack_data_1, stack_data_2);
+		printf("stack1 length : %d", stack_data_2->length);
 	}
 	sorting_3(stack_data_1);
 	if (is_sort(stack_data_2))
 		swap(stack_data_2, 'b');
 	while (stack_data_2->length > 0)
-		push(stack_data_1, stack_data_2);
+	{
+		printf("stack2 length : %d", stack_data_2->length);
+		pa(stack_data_2, stack_data_1);
+	}
 }
 
 int	find_lower(t_list_data *stack_data_1)

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 22:39:53 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:01:31 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,13 @@ void	print_list(t_list *stack)
 
 void	print_rank(t_list *stack)
 {
+	printf("Rank\n---\n");
 	while (stack)
 	{
 		printf("%d\n", stack->rank);
 		stack = stack->next;
 	}
+	printf("---\n");
 }
 
 void	print_reverse_stack(t_list *stack)
