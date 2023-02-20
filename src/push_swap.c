@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 10:36:29 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:53:15 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
 
 void	sorting(t_list_data *stack_1, t_list_data *stack_2)
 {
-	(void) stack_2;
 	if (stack_1->length <= 3)
 		sorting_3(stack_1);
 	else if (stack_1->length <= 5)

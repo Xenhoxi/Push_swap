@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:32:06 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 11:08:04 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:51:59 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sorting_3(t_list_data *stack_data)
 {
 	int	position;
 
-	ranking(stack_data);
 	position = 0;
 	position = check_position(stack_data);
 	if (position == 1)
@@ -56,6 +55,6 @@ int	check_position(t_list_data *stack_data)
 	if (stack_data->length == 3
 		&& stack_data->first->rank > stack_data->last->rank)
 		result += i;
-	printf("%d\n", result);
+	// printf("%d\n", result);
 	return (result);
 }

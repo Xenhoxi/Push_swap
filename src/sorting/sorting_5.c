@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 11:28:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:04:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	sorting_5(t_list_data *stack_data_1, t_list_data *stack_data_2)
 {
 	while (stack_data_1->length > 3)
 	{
-		if (put_lower_in_first(stack_data_1, find_lower(stack_data_1)) == 1)
+		if (put_lower_in_first(stack_data_1) == 1)
 			pb(stack_data_1, stack_data_2);
 	}
-	if (!is_sort(stack_data_1))
-		sorting_3(stack_data_1);
+	sorting_3(stack_data_1);
 	if (is_sort(stack_data_2))
 		swap(stack_data_2, 'b');
 	while (stack_data_2->length > 0)
@@ -33,7 +32,7 @@ int	find_lower(t_list_data *stack_data)
 	int		pos;
 	int		i;
 
-	i = 1;
+	i = 0;
 	pos = 1;
 	stack = stack_data->first;
 	while (stack->next)
@@ -44,32 +43,31 @@ int	find_lower(t_list_data *stack_data)
 			i++;
 		stack = stack->next;
 	}
-	printf("position du lower %d\n", pos);
 	return (pos);
 }
 
-int	put_lower_in_first(t_list_data *stack_data, int lower_pos)
+int	find_lower_rank(t_list_data *stack_data)
 {
-	print_list(stack_data->first);
-	if (lower_pos <= stack_data->length / 2)
+	int		rank;
+	t_list	*stack;
+
+	stack = stack_data->first;
+	rank = stack->rank;
+	while (stack)
 	{
-		while (stack_data->first->rank != 1)
-		{
-			ranking(stack_data);
-			rotate(stack_data, 'a');
-			lower_pos--;
-		}
-		return (1);
+		if (stack->rank < rank)
+			rank = stack->rank;
+		stack = stack->next;
 	}
-	else if (lower_pos > stack_data->length / 2)
-	{
-		while (stack_data->first->rank != 1)
-		{
-			ranking(stack_data);
-			rev_rotate(stack_data, 'a');
-			lower_pos--;
-		}
-		return (1);
-	}
-	return (0);
+	return (rank);
+}
+
+int	put_lower_in_first(t_list_data *stack_data)
+{
+	int	smallest_rank;
+
+	smallest_rank = find_lower_rank(stack_data);
+	while (stack_data->first->rank != smallest_rank)
+		rotate(stack_data, 'a');
+	return (1);
 }
