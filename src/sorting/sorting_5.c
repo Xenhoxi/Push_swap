@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 09:53:51 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:28:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,40 @@ void	sorting_5(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	{
 		if (put_lower_in_first(stack_data_1, find_lower(stack_data_1)) == 1)
 			pb(stack_data_1, stack_data_2);
-		printf("stack1 length : %d", stack_data_2->length);
 	}
-	sorting_3(stack_data_1);
+	if (!is_sort(stack_data_1))
+		sorting_3(stack_data_1);
 	if (is_sort(stack_data_2))
 		swap(stack_data_2, 'b');
 	while (stack_data_2->length > 0)
-	{
-		printf("stack2 length : %d", stack_data_2->length);
-		pa(stack_data_2, stack_data_1);
-	}
+		pa(stack_data_1, stack_data_2);
 }
 
-int	find_lower(t_list_data *stack_data_1)
+int	find_lower(t_list_data *stack_data)
 {
 	t_list	*stack;
 	int		pos;
+	int		i;
 
-	pos = 0;
-	stack = stack_data_1->first;
+	i = 1;
+	pos = 1;
+	stack = stack_data->first;
 	while (stack->next)
 	{
-		if (stack->rank == 1)
-			return (pos);
-		pos++;
+		if (stack->value > stack->next->value)
+			pos += i;
+		else
+			i++;
 		stack = stack->next;
 	}
+	printf("position du lower %d\n", pos);
 	return (pos);
 }
 
 int	put_lower_in_first(t_list_data *stack_data, int lower_pos)
 {
-	if (lower_pos <= 2)
+	print_list(stack_data->first);
+	if (lower_pos <= stack_data->length / 2)
 	{
 		while (stack_data->first->rank != 1)
 		{
@@ -59,7 +61,7 @@ int	put_lower_in_first(t_list_data *stack_data, int lower_pos)
 		}
 		return (1);
 	}
-	else if (lower_pos >= 3 && lower_pos <= 5)
+	else if (lower_pos > stack_data->length / 2)
 	{
 		while (stack_data->first->rank != 1)
 		{

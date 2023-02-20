@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/17 12:49:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:38:48 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list_data
 	t_list	*first;
 	t_list	*last;
 	int		length;
-	char	name;
+	int		start_length;
 }			t_list_data;
 
 // push_swap.c
@@ -54,7 +54,7 @@ void	print_reverse_stack(t_list *stack);
 // stack_gestion_2.c
 int		stacklen(t_list *stack);
 t_list	*stacklast(t_list *stack);
-void	init_list(t_list_data *stack, char _name);
+void	init_list(t_list_data *stack);
 
 // --- OPERATEURS ---
 
@@ -83,5 +83,8 @@ int		check_position(t_list_data *stack_data);
 void	sorting_5(t_list_data *stack_1, t_list_data *stack_2);
 int		find_lower(t_list_data *stack_data_1);
 int		put_lower_in_first(t_list_data *stack_data, int lower_pos);
+
+// sorting_100.c
+void	sorting_100(t_list_data *stack_1, t_list_data *stack_2);
 
 #endif

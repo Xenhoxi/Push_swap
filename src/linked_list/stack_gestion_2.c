@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 00:14:04 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/13 13:26:59 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:35:58 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ t_list	*stacklast(t_list *stack)
 	return (stack);
 }
 
-void	init_list(t_list_data *stack, char _name)
+void	init_list(t_list_data *stack)
 {
 	stack->first = NULL;
 	stack->last = NULL;
-	stack->name = _name;
+	stack->start_length = -1;
 	stack->length = 0;
 }
