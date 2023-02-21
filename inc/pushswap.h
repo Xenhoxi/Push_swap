@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 14:04:11 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:19:39 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int		check_position(t_list_data *stack_data);
 
 // sorting_5.c
 void	sorting_5(t_list_data *stack_1, t_list_data *stack_2);
-int		find_lower(t_list_data *stack_data_1);
 int		put_lower_in_first(t_list_data *stack_data);
 
 // sorting_100.c

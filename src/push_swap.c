@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 15:08:27 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:59:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		exit(1);
 	else
 		sorting(&stack_1, &stack_2);
-	print_list(stack_1.first);
+	// print_list(stack_1.first);
 	return (0);
 }
 
@@ -38,9 +38,3 @@ void	sorting(t_list_data *stack_1, t_list_data *stack_2)
 	else if (stack_1->length <= 100)
 		sorting_100(stack_1, stack_2);
 }
-
-/*
-	Suite ...
-	Algo de tri pour 100 nombres
-	Algo de tri pour 500 nombres
-*/

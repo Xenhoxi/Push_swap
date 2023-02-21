@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:32:06 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 13:51:59 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:55:51 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	sorting_3(t_list_data *stack_data)
 		rev_rotate(stack_data, 'a');
 	else if (position == 2)
 	{
-		swap(stack_data, 'a');
 		rotate(stack_data, 'a');
+		swap(stack_data, 'a');
 	}
 	else if (position == 5)
 		rotate(stack_data, 'a');
@@ -53,8 +53,8 @@ int	check_position(t_list_data *stack_data)
 		stack = stack->next;
 	}
 	if (stack_data->length == 3
-		&& stack_data->first->rank > stack_data->last->rank)
+		&& stack_data->first->rank > stack->rank)
 		result += i;
-	// printf("%d\n", result);
+	// printf("pos = %d\n", result);
 	return (result);
 }

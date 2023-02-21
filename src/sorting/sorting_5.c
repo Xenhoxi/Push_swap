@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 14:04:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:27:20 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,6 @@ void	sorting_5(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		swap(stack_data_2, 'b');
 	while (stack_data_2->length > 0)
 		pa(stack_data_1, stack_data_2);
-}
-
-int	find_lower(t_list_data *stack_data)
-{
-	t_list	*stack;
-	int		pos;
-	int		i;
-
-	i = 0;
-	pos = 1;
-	stack = stack_data->first;
-	while (stack->next)
-	{
-		if (stack->value > stack->next->value)
-			pos += i;
-		else
-			i++;
-		stack = stack->next;
-	}
-	return (pos);
 }
 
 int	find_lower_rank(t_list_data *stack_data)
