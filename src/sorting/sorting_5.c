@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/21 14:27:20 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:54:54 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	sorting_5(t_list_data *stack_data_1, t_list_data *stack_data_2)
 {
 	while (stack_data_1->length > 3)
 	{
-		if (put_lower_in_first(stack_data_1) == 1)
-			pb(stack_data_1, stack_data_2);
+		put_lower_in_first(stack_data_1);
+		pb(stack_data_1, stack_data_2);
 	}
 	sorting_3(stack_data_1);
 	if (is_sort(stack_data_2))
@@ -42,12 +42,32 @@ int	find_lower_rank(t_list_data *stack_data)
 	return (rank);
 }
 
-int	put_lower_in_first(t_list_data *stack_data)
+void	put_lower_in_first(t_list_data *stack_data)
 {
-	int	smallest_rank;
+	int	low_rank;
+	int	pos;
 
-	smallest_rank = find_lower_rank(stack_data);
-	while (stack_data->first->rank != smallest_rank)
+	low_rank = find_lower_rank(stack_data);
+	pos = find_eazy_ways(stack_data, low_rank);
+	while (stack_data->first->rank != low_rank && pos <= stack_data->length / 2)
 		rotate(stack_data, 'a');
-	return (1);
+	while (stack_data->first->rank != low_rank && pos > stack_data->length / 2)
+		rev_rotate(stack_data, 'a');
+}
+
+int	find_eazy_ways(t_list_data *stack_data, int smallest_rank)
+{
+	t_list	*stack;
+	int		i;
+
+	stack = stack_data->first;
+	i = 0;
+	while (stack)
+	{
+		if (stack->rank == smallest_rank)
+			return (i);
+		i++;
+		stack = stack->next;
+	}
+	return (-1);
 }
