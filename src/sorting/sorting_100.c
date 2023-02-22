@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/22 15:10:06 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:53:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,20 @@ void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		put_lower_in_first(stack_data_1);
 		pb(stack_data_1, stack_data_2);
 	}
-	while (stack_data_1->length != stack_data_1->start_length)
+	while (stack_data_2->length)
 		pa(stack_data_1, stack_data_2);
 }
 
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 {
+	int	i;
+
+	i = 0;
 	while (stack_data_1->length > 25)
-	{
-		pb_25_smallest(stack_data_1, stack_data_2);
-	}
+		pb_25_smallest(stack_data_1, stack_data_2, ++i);
 }
 
-void	pb_25_smallest(t_list_data *stack_data_1, t_list_data *stack_data_2)
+void	pb_25_smallest(t_list_data *stack_data_1, t_list_data *stack_data_2, int i)
 {
 	t_list	*stack_1;
 	int	rank_min;
@@ -48,9 +49,10 @@ void	pb_25_smallest(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	size = 25;
 	stack_1 = stack_data_1->first;
 	rank_min = find_lower_rank(stack_data_1);
-	while (stack_data_2->length != 25)
+	while (stack_data_2->length < size * i)
 	{
-		if (stack_1->rank > rank_min && stack_1->rank < rank_min + size)
+		stack_1 = stack_data_1->first;
+		if (stack_1->rank >= rank_min && stack_1->rank < rank_min + size)
 			pb(stack_data_1, stack_data_2);
 		else
 			rotate(stack_data_1, 'a');

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/22 15:04:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:40:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	error(void);
 // stack_gestion.c
 void	fill_stack_split(int argc, char **argv, t_list_data *stack);
 void	fill_stack_argv(int argc, char **argv, t_list_data *stack);
-void	print_list(t_list *stack);
+void	print_list(t_list *stack_1, int	nb_stack);
 void	print_rank(t_list *stack);
 void	print_reverse_stack(t_list *stack);
 
@@ -89,6 +89,6 @@ int		find_lower_rank(t_list_data *stack_data);
 void	sorting_100(t_list_data *stack_1, t_list_data *stack_2);
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
-void	pb_25_smallest(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	pb_25_smallest(t_list_data *stack_data_1, t_list_data *stack_data_2, int i);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/20 12:49:20 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:54:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,12 @@ void	fill_stack_argv(int argc, char **argv, t_list_data *stack)
 	stack->last = stacklast(stack->first);
 }
 
-void	print_list(t_list *stack_1)
+void	print_list(t_list *stack_1, int	nb_stack)
 {
-	printf("Stacks 1\n");
+	if (nb_stack == 1)
+		printf("Stacks 1\n");
+	if (nb_stack == 2)
+		printf("Stacks 2\n");
 	while (stack_1)
 	{
 		printf("%d -> %d\n", stack_1->value, stack_1->rank);
