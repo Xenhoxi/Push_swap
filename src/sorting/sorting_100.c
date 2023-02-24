@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 10:22:47 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/24 14:46:05 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,21 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	{
 		put_lower_in_first(stack_data_1, 'a');
 		pb(stack_data_1, stack_data_2);
+		// print_list(stack_data_1->first, 1);
 	}
 	while (stack_data_2->length)
 	{
-		printf("bite %d cm\n", stack_data_2->length);
 		if (stack_data_1->first->rank == (stack_data_2->first->rank) + 1)
 			pa(stack_data_1, stack_data_2);
 		else
 		{
-			put_higher_in_first(stack_data_2, 'b');
-			pa(stack_data_1, stack_data_2);
+			// put_higher_in_first(stack_data_2, 'b');
+			rotate(stack_data_2, 'b');
+			// pa(stack_data_1, stack_data_2);
 		}
-		print_list(stack_data_1->first, 1);
-		print_list(stack_data_2->first, 2);
 	}
+	// print_list(stack_data_1->first, 1);
+	// print_list(stack_data_2->first, 2);
 }
 
 void	pb_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int i, int size)
