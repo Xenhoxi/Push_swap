@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/23 00:54:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:21:14 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	fill_stack_split(int argc, char **argv, t_list_data *stack)
 		ft_lstadd_back(&stack->first, ft_lstnew(ft_atoi(argv[i++])));
 		stack->length++;
 	}
-	stack->start_length = stack->length;
+	stack->start_length = stack->length++;
 	stack->last = stacklast(stack->first);
 }
 
@@ -40,7 +40,7 @@ void	fill_stack_argv(int argc, char **argv, t_list_data *stack)
 	stack->last = stacklast(stack->first);
 }
 
-void	print_list(t_list *stack_1, int	nb_stack)
+void	print_list(t_list *stack_1, int nb_stack)
 {
 	if (nb_stack == 1)
 		printf("Stacks 1\n");

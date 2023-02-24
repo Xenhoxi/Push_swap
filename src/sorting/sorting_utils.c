@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:49:32 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/09 15:56:57 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:22:53 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,20 @@ int	is_sort(t_list_data *stack_data)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+int	find_higher_rank(t_list_data *stack_data)
+{
+	int		rank;
+	t_list	*stack;
+
+	stack = stack_data->first;
+	rank = stack->rank;
+	while (stack)
+	{
+		if (stack->rank > rank)
+			rank = stack->rank;
+		stack = stack->next;
+	}
+	return (rank);
 }

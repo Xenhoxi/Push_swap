@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/23 00:40:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:23:36 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	error(void);
 // stack_gestion.c
 void	fill_stack_split(int argc, char **argv, t_list_data *stack);
 void	fill_stack_argv(int argc, char **argv, t_list_data *stack);
-void	print_list(t_list *stack_1, int	nb_stack);
+void	print_list(t_list *stack_1, int nb_stack);
 void	print_rank(t_list *stack);
 void	print_reverse_stack(t_list *stack);
 
@@ -74,6 +74,7 @@ void	rrr(t_list_data *stack_data_1, t_list_data *stack_data_2);
 // sorting_utils.c 
 void	ranking(t_list_data *stack_data);
 int		is_sort(t_list_data *stack_data);
+int		find_higher_rank(t_list_data *stack_data);
 
 // sorting_3.c
 void	sorting_3(t_list_data *stack_data);
@@ -81,7 +82,7 @@ int		check_position(t_list_data *stack_data);
 
 // sorting_5.c
 void	sorting_5(t_list_data *stack_1, t_list_data *stack_2);
-void	put_lower_in_first(t_list_data *stack_data);
+void	put_lower_in_first(t_list_data *stack_data, char chose_stack);
 int		find_eazy_ways(t_list_data *stack_data, int smallest_rank);
 int		find_lower_rank(t_list_data *stack_data);
 
@@ -89,6 +90,7 @@ int		find_lower_rank(t_list_data *stack_data);
 void	sorting_100(t_list_data *stack_1, t_list_data *stack_2);
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
-void	pb_25_smallest(t_list_data *stack_data_1, t_list_data *stack_data_2, int i);
+void	pb_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int i, int size);
+void	put_higher_in_first(t_list_data *stack_data, char chose_stack);
 
 #endif

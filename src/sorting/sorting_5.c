@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/22 10:54:54 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:14:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sorting_5(t_list_data *stack_data_1, t_list_data *stack_data_2)
 {
 	while (stack_data_1->length > 3)
 	{
-		put_lower_in_first(stack_data_1);
+		put_lower_in_first(stack_data_1, 'a');
 		pb(stack_data_1, stack_data_2);
 	}
 	sorting_3(stack_data_1);
@@ -39,10 +39,11 @@ int	find_lower_rank(t_list_data *stack_data)
 			rank = stack->rank;
 		stack = stack->next;
 	}
+	// printf("lower rank %d\n", rank);
 	return (rank);
 }
 
-void	put_lower_in_first(t_list_data *stack_data)
+void	put_lower_in_first(t_list_data *stack_data, char chose_stack)
 {
 	int	low_rank;
 	int	pos;
@@ -50,12 +51,12 @@ void	put_lower_in_first(t_list_data *stack_data)
 	low_rank = find_lower_rank(stack_data);
 	pos = find_eazy_ways(stack_data, low_rank);
 	while (stack_data->first->rank != low_rank && pos <= stack_data->length / 2)
-		rotate(stack_data, 'a');
+		rotate(stack_data, chose_stack);
 	while (stack_data->first->rank != low_rank && pos > stack_data->length / 2)
-		rev_rotate(stack_data, 'a');
+		rev_rotate(stack_data, chose_stack);
 }
 
-int	find_eazy_ways(t_list_data *stack_data, int smallest_rank)
+int	find_eazy_ways(t_list_data *stack_data, int rank)
 {
 	t_list	*stack;
 	int		i;
@@ -64,10 +65,10 @@ int	find_eazy_ways(t_list_data *stack_data, int smallest_rank)
 	i = 0;
 	while (stack)
 	{
-		if (stack->rank == smallest_rank)
+		if (stack->rank == rank)
 			return (i);
 		i++;
 		stack = stack->next;
 	}
-	return (-1);
+	return (i);
 }
