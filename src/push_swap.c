@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/26 18:00:30 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/27 15:15:58 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	else
 		sorting(&stack_1, &stack_2);
 	// print_list(stack_1.first, 1);
-	// print_list(stack_1.first, 1);
+	// print_list(stack_2.first, 2);
 	return (0);
 }
 
@@ -38,4 +38,6 @@ void	sorting(t_list_data *stack_1, t_list_data *stack_2)
 		sorting_5(stack_1, stack_2);
 	else if (stack_1->length <= 500)
 		sorting_100(stack_1, stack_2);
+	// else if (stack_1->length > 100)
+		// sorting_500(stack_1, stack_2);
 }

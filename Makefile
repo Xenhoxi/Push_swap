@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/02/26 02:13:14 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/27 11:44:56 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC = src/push_swap.c \
 
 CC = gcc
 
-OBJECTS = $(SRC:.c=.o)
+# OBJECTS = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -37,7 +37,7 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	make -C inc/libft
-	gcc $(CFLAGS) -o $(NAME) $(OBJECTS) inc/libft/libft.a -g3
+	gcc $(CFLAGS) $(SRC) inc/libft/libft.a -g3
 
 clean:
 	rm -f $(OBJECTS) $(BONUS)
