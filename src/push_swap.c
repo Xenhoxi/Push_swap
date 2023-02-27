@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 14:47:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:00:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	else
 		sorting(&stack_1, &stack_2);
 	// print_list(stack_1.first, 1);
-	// print_list(stack_2.first, 2);
+	// print_list(stack_1.first, 1);
 	return (0);
 }
 

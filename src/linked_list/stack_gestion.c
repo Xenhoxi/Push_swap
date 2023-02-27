@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 14:31:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/26 02:04:28 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	print_list(t_list *stack_1, int nb_stack)
 		printf("Stacks 2\n");
 	while (stack_1)
 	{
-		printf("%d -> %d\n", stack_1->value, stack_1->rank);
+		printf("Value %d | rank %d | prev %p | current %p | next %p\n", stack_1->value, stack_1->rank, stack_1->prev, stack_1, stack_1->next);
 		stack_1 = stack_1->next;
 	}
 }

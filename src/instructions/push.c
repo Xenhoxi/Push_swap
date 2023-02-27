@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:27:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 14:26:03 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/26 02:11:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		stack_data_2->first = stack_data_2->first->next;
 		stack_data_2->length--;
 		tmp->next = stack_data_1->first;
-		tmp->prev = 0;
+		tmp->prev = 0; // ne remet pas les prev du suivant a jour
+		if (tmp->next)
+			tmp->next->prev = tmp;
 		stack_data_1->first = tmp;
 		stack_data_1->length++;
 		write(1, "pa\n", 3);
@@ -40,6 +42,8 @@ void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		stack_data_1->length--;
 		tmp->next = stack_data_2->first;
 		tmp->prev = 0;
+		if (tmp->next)
+			tmp->next->prev = tmp;
 		stack_data_2->first = tmp;
 		stack_data_2->length++;
 		write(1, "pb\n", 3);

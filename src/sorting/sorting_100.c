@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 14:46:05 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/27 11:20:46 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	int	i;
 	int	chunk_size;
 
-	chunk_size = 21;
+	chunk_size = 34;
 	i = 0;
 	while (stack_data_1->length > chunk_size)
 		pb_chunk(stack_data_1, stack_data_2, ++i, chunk_size);
@@ -44,21 +44,14 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	{
 		put_lower_in_first(stack_data_1, 'a');
 		pb(stack_data_1, stack_data_2);
-		// print_list(stack_data_1->first, 1);
 	}
 	while (stack_data_2->length)
 	{
 		if (stack_data_1->first->rank == (stack_data_2->first->rank) + 1)
 			pa(stack_data_1, stack_data_2);
 		else
-		{
-			// put_higher_in_first(stack_data_2, 'b');
-			rotate(stack_data_2, 'b');
-			// pa(stack_data_1, stack_data_2);
-		}
+			put_higher_in_first(stack_data_2, 'b');
 	}
-	// print_list(stack_data_1->first, 1);
-	// print_list(stack_data_2->first, 2);
 }
 
 void	pb_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int i, int size)
@@ -72,6 +65,11 @@ void	pb_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int i, int s
 	{
 		stack_1 = stack_data_1->first;
 		if (stack_1->rank >= rank_min && stack_1->rank < rank_min + size)
+		{
+			pb(stack_data_1, stack_data_2);
+			rev_rotate(stack_data_2, 'b');
+		}
+		if (stack_1->rank >= rank_min + size && stack_1->rank < rank_min + size * 2)
 			pb(stack_data_1, stack_data_2);
 		else
 			rotate(stack_data_1, 'a');
@@ -97,27 +95,3 @@ void	put_higher_in_first(t_list_data *stack_data, char chose_stack)
 	apres trie la pile b en recherchant les plus grand, les mettres en p1 et les push dans A (chunk de 25)
 	bien joue t'es trop fort
 */
-
-// int	size_of_chunk(t_list_data *stack)
-// {
-// 	int	size;
-
-// 	size = stack->length / 4;
-// 	return (size);
-// }
-
-// void	push_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int size)
-// {
-// 	t_list	*stack_1;
-// 	int		length_wanted;
-
-// 	stack_1 = stack_data_1->first;
-// 	length_wanted = stack_data_1->length - size;
-// 	while (stack_data_1->length > length_wanted)
-// 	{
-// 		if (stack_1->rank < size)
-// 			pb(stack_data_1, stack_data_2);
-// 		else
-// 			rotate(stack_data_1, 'a');
-// 	}
-// }

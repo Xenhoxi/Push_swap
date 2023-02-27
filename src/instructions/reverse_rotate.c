@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:32:56 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 14:43:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/26 00:48:17 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	rev_rotate(t_list_data *stack_data, char stack_selected)
 	t_list	*stack;
 
 	stack = stack_data->first;
-	if (stack_data->first && stack_data->length >= 2)
+	if (stack_data->first && stack_data->first->next)
 	{
 		while (stack->next)
 			stack = stack->next;
 		tmp = stack;
-		if (tmp->prev)
-			tmp->prev->next = 0;
+		stack = stack->prev;
+		stack->next = 0;
 		tmp->prev = 0;
 		tmp->next = stack_data->first;
 		stack_data->first->prev = tmp;
