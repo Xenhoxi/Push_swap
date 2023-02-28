@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/27 15:59:57 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:30:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	define_chunk_size(t_list_data *stack_data_1)
 	else if (stack_data_1->start_length <= 200)
 		size = stack_data_1->start_length / 15;
 	else if (stack_data_1->start_length > 200)
-		size = stack_data_1->start_length / 23;
+		size = stack_data_1->start_length / 11;
 	return (size);
 }
 
@@ -58,6 +58,8 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		pb_chunk(stack_data_1, stack_data_2, ++i, chunk_size);
 	while (stack_data_1->length > 1)
 	{
+		if (is_sort(stack_data_1))
+			break ;
 		put_lower_in_first(stack_data_1, 'a');
 		pb(stack_data_1, stack_data_2);
 	}
@@ -73,41 +75,28 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	}
 }
 
-void	pb_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int i, int size)
+void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 {
-	t_list	*stack_1;
-	int		rank_min;
+	t_list	*s_1;
+	int		min_r;
 
-	stack_1 = stack_data_1->first;
-	rank_min = find_lower_rank(stack_data_1);
-	while (stack_data_2->length < size * 2 * i && stack_data_1->length > 1)
+	s_1 = s_data_1->first;
+	min_r = find_lower_rank(s_data_1);
+	while (s_data_2->length < size * 2 * i && s_data_1->length > 1)
 	{
-		stack_1 = stack_data_1->first;
-		if (stack_1->rank == stack_data_1->start_length)
-			rotate(stack_data_1, 'a');
-		else if (stack_1->rank >= rank_min + size && stack_1->rank < rank_min + size * 2)
-			pb(stack_data_1, stack_data_2);
-		else if (stack_1->rank >= rank_min && stack_1->rank < rank_min + size)
+		s_1 = s_data_1->first;
+		if (s_1->rank == s_data_1->start_length)
+			rotate(s_data_1, 'a');
+		else if (s_1->rank >= min_r + size && s_1->rank < min_r + size * 2)
+			pb(s_data_1, s_data_2);
+		else if (s_1->rank >= min_r && s_1->rank < min_r + size)
 		{
-			pb(stack_data_1, stack_data_2);
-			rotate(stack_data_2, 'b');
+			pb(s_data_1, s_data_2);
+			rotate(s_data_2, 'b');
 		}
-		else if (stack_data_2->length == stack_data_1->start_length)
+		else if (s_data_2->length == s_data_1->start_length)
 			break ;
 		else
-			rotate(stack_data_1, 'a');
+			rotate(s_data_1, 'a');
 	}
-}
-
-void	put_higher_in_first(t_list_data *stack_data, char chose_stack)
-{
-	int	rank_max;
-	int	pos;
-
-	rank_max = find_higher_rank(stack_data);
-	pos = find_eazy_ways(stack_data, rank_max);
-	while (stack_data->first->rank != rank_max && pos <= stack_data->length / 2)
-		rotate(stack_data, chose_stack);
-	while (stack_data->first->rank != rank_max && pos > stack_data->length / 2)
-		rev_rotate(stack_data, chose_stack);
 }

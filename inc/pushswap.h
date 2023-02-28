@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/24 10:23:36 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:29:17 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	rrr(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	ranking(t_list_data *stack_data);
 int		is_sort(t_list_data *stack_data);
 int		find_higher_rank(t_list_data *stack_data);
+void	put_higher_in_first(t_list_data *stack_data, char chose_stack);
 
 // sorting_3.c
 void	sorting_3(t_list_data *stack_data);
@@ -90,7 +91,6 @@ int		find_lower_rank(t_list_data *stack_data);
 void	sorting_100(t_list_data *stack_1, t_list_data *stack_2);
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
-void	pb_chunk(t_list_data *stack_data_1, t_list_data *stack_data_2, int i, int size);
-void	put_higher_in_first(t_list_data *stack_data, char chose_stack);
+void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size);
 
 #endif
