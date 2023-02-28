@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/02/28 12:16:52 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/28 12:49:47 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,10 @@ SRC = src/push_swap.c \
 	src/sorting/sorting_3.c \
 	src/sorting/sorting_5.c \
 	src/sorting/sorting_100.c \
-	src/sorting/sorting_500.c \
 
 CC = gcc
 
-# OBJECTS = $(SRC:.c=.o)
+OBJECTS = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra
 

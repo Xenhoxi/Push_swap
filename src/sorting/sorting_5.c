@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 14:46:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/23 12:14:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:18:53 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	find_lower_rank(t_list_data *stack_data)
 			rank = stack->rank;
 		stack = stack->next;
 	}
-	// printf("lower rank %d\n", rank);
 	return (rank);
 }
 

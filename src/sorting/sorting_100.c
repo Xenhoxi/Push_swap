@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/28 00:30:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/02/28 13:50:53 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	define_chunk_size(t_list_data *stack_data_1)
 		size = stack_data_1->start_length / 10;
 	else if (stack_data_1->start_length <= 200)
 		size = stack_data_1->start_length / 15;
-	else if (stack_data_1->start_length > 200)
-		size = stack_data_1->start_length / 11;
+	else if (stack_data_1->start_length > 400)
+		size = stack_data_1->start_length / 18;
 	return (size);
 }
 
