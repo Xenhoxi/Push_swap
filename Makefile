@@ -6,13 +6,13 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/02/28 12:49:47 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/02/28 22:59:16 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = src/push_swap.c \
+SRC = src/sorting/push_swap.c \
 	src/parsing/parsing.c \
 	src/parsing/parsing_2.c \
 	src/linked_list/stack_gestion.c \
