@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/28 13:50:53 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:45:37 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	define_chunk_size(t_list_data *stack_data_1)
 	else if (stack_data_1->start_length <= 200)
 		size = stack_data_1->start_length / 15;
 	else if (stack_data_1->start_length > 400)
-		size = stack_data_1->start_length / 18;
+		size = stack_data_1->start_length / 19;
 	return (size);
 }
 
@@ -80,8 +80,8 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 	t_list	*s_1;
 	int		min_r;
 
-	s_1 = s_data_1->first;
 	min_r = find_lower_rank(s_data_1);
+	s_1 = s_data_1->first;
 	while (s_data_2->length < size * 2 * i && s_data_1->length > 1)
 	{
 		s_1 = s_data_1->first;
