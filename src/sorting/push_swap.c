@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/01 13:05:11 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/02 22:42:39 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	sorting(t_list_data *stack_1, t_list_data *stack_2)
 		sorting_5(stack_1, stack_2);
 	else if (stack_1->length > 5)
 		sorting_100(stack_1, stack_2);
-	// else if (stack_1->length > 100)
-		// sorting_500(stack_1, stack_2);
+	else if (stack_1->length > 100)
+		sorting_big(stack_1, stack_2);
 }

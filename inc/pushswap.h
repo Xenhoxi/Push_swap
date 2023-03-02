@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/28 11:47:25 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/02 23:43:00 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,12 @@ int		find_lower_rank(t_list_data *stack_data);
 // sorting_100.c
 void	sorting_100(t_list_data *stack_1, t_list_data *stack_2);
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2);
-void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size);
+int		define_chunk_size(t_list_data *stack_data_1);
+
+// sorting_big.c
+void	push_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size, int i);
+void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
 
 #endif
