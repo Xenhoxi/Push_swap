@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:32:06 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/21 13:55:51 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/02 12:43:39 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,5 @@ int	check_position(t_list_data *stack_data)
 	if (stack_data->length == 3
 		&& stack_data->first->rank > stack->rank)
 		result += i;
-	// printf("pos = %d\n", result);
 	return (result);
 }

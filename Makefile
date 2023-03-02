@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/03/01 14:21:35 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/03/02 11:32:32 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	make -C inc/libft
-	gcc $(CFLAGS) -o $(NAME) $(OBJECTS) inc/libft/libft.a -g3
+	gcc $(CFLAGS) $(SRC) inc/libft/libft.a -g3
 
 bonus: $(OBJECTSBONUS)
 	gcc $(CFLAGS) -o checker $(OBJECTSBONUS)
