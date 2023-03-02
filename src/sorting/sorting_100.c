@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/02 13:34:14 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/02 13:53:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,54 +77,54 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	}
 }
 
-// int	find_first_in_range(t_list_data *stack_data, int size, int min_r)
-// {
-// 	t_list	*stack;
-// 	int		i;
+int	find_first_in_range(t_list_data *stack_data, int size, int min_r)
+{
+	t_list	*stack;
+	int		i;
 
-// 	stack = stack_data->first;
-// 	i = 0;
-// 	while (stack)
-// 	{
-// 		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
-// 			return (i);
-// 		else
-// 			i++;
-// 		stack = stack->next;
-// 	}
-// 	return (-1);
-// }
+	stack = stack_data->first;
+	i = 0;
+	while (stack)
+	{
+		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
+			return (i);
+		else
+			i++;
+		stack = stack->next;
+	}
+	return (-1);
+}
 
-// int	find_last_in_range(t_list_data *stack_data, int size, int min_r)
-// {
-// 	t_list	*stack;
-// 	int		i;
+int	find_last_in_range(t_list_data *stack_data, int size, int min_r)
+{
+	t_list	*stack;
+	int		i;
 
-// 	stack = stacklast(stack_data->first);
-// 	i = 0;
-// 	while (stack)
-// 	{
-// 		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
-// 			return (i++);
-// 		else
-// 			i++;
-// 		stack = stack->prev;
-// 	}
-// 	return (1);
-// }
+	stack = stacklast(stack_data->first);
+	i = 0;
+	while (stack)
+	{
+		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
+			return (i++);
+		else
+			i++;
+		stack = stack->prev;
+	}
+	return (1);
+}
 
-// void	what_should_i_do(t_list_data *stack_data, int size, int min_r)
-// {
-// 	int	first;
-// 	int	last;
+void	what_should_i_do(t_list_data *stack_data, int size, int min_r)
+{
+	int	first;
+	int	last;
 
-// 	first = find_first_in_range(stack_data, size, min_r);
-// 	last = find_last_in_range(stack_data, size, min_r);
-// 	if (first < last)
-// 		rotate(stack_data, 'a');
-// 	else
-// 		rev_rotate(stack_data, 'a');
-// }
+	first = find_first_in_range(stack_data, size, min_r);
+	last = find_last_in_range(stack_data, size, min_r);
+	if (first < last)
+		rotate(stack_data, 'a');
+	else
+		rev_rotate(stack_data, 'a');
+}
 
 void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 {
@@ -136,9 +136,9 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 	while (s_data_2->length < size * 2 * i && s_data_1->length > 1)
 	{
 		s_1 = s_data_1->first;
-		if (s_1->rank == s_data_1->start_length)
-			rotate(s_data_1, 'a');
-		else if (s_1->rank >= min_r + size && s_1->rank < min_r + size * 2)
+		// if (s_1->rank == s_data_1->start_length)
+		// 	rotate(s_data_1, 'a');
+		if (s_1->rank >= min_r + size && s_1->rank < min_r + size * 2)
 		{
 			pb(s_data_1, s_data_2);
 			rotate(s_data_2, 'b');
@@ -150,6 +150,6 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 		else if (s_data_2->length == s_data_1->start_length)
 			break ;
 		else
-			rotate(s_data_1, 'a');
+			what_should_i_do(s_data_1, size, min_r);
 	}
 }
