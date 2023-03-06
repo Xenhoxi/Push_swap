@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/06 13:50:23 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:41:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,8 @@ void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	}
 	while (stack_data_1->first->rank == (stack_data_2->first->rank) + 1)
 		pa(stack_data_1, stack_data_2);
-	sort_ck(stack_data_1, stack_data_2, i++, chunk_size);
-	// while (stack_data_2->length)
-	// {
-	// 	if (stack_data_1->first->rank == (stack_data_2->first->rank) + 1)
-	// 		pa(stack_data_1, stack_data_2);
-	// 	else
-	// 		put_higher_in_first(stack_data_2, 'b');
-	// }
+	while (stack_data_2->length)
+		sort_ck(stack_data_1, stack_data_2, i++, chunk_size);
 }
 
 void	sort_ck(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
@@ -83,18 +77,19 @@ void	sort_ck(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 	max_r = find_higher_rank(s_data_1);
 	s_1 = s_data_1->first;
 	(void) i;
-	while (s_data_2->length)
+	if (s_1->rank >= max_r - size && s_1->rank < max_r)
 	{
-		if (s_1->rank >= max_r - size && s_1->rank < max_r)
-		{
-			pa(s_data_1, s_data_2);
-			rev_rotate(s_data_1, 'a');
-		}
-		else if (s_1->rank >= max_r - size && s_1->rank < max_r - size * 2)
-			pa(s_data_1, s_data_2);
-		else
-			rotate(s_data_1, 'a');
+		pa(s_data_1, s_data_2);
+		rotate(s_data_1, 'a');
 	}
+		// else if (s_1->rank >= max_r - size * 2 && s_1->rank < max_r - size)
+		// {
+		// 	put_higher_in_first(s_data_2, 'b');
+		// 	pa(s_data_1, s_data_2);
+		// 	rev_rotate(s_data_1, 'a');
+		// }
+		// else
+		// 	rev_rotate(s_data_1, 'a');
 }
 
 void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
