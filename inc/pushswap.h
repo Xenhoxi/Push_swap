@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/06 02:13:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:49:42 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int		define_chunk_size(t_list_data *stack_data_1);
 void	push_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	pa_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size);
+void	sort_ck(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:04:50 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/06 02:17:16 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:30:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	}
 	if (!is_sort(stack_data_1))
 		swap(stack_data_1, 'a');
-	size_chunk = 2;
-	printf("ici");
-	while (stack_data_2->first)
+	while (stack_data_2->length)
 	{
-		pa_ck(stack_data_1, stack_data_2, size_chunk);
-		size_chunk *= 2;
-		// print_list(stack_data_1, 1);
-		// print_list(stack_data_2, 2);
+		if (stack_data_1->first->rank == (stack_data_2->first->rank) + 1)
+			pa(stack_data_1, stack_data_2);
+		else
+			put_higher_in_first(stack_data_2, 'b');
 	}
 }
 
