@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/02 23:43:00 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/06 02:13:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	error(void);
 // stack_gestion.c
 void	fill_stack_split(int argc, char **argv, t_list_data *stack);
 void	fill_stack_argv(int argc, char **argv, t_list_data *stack);
-void	print_list(t_list *stack_1, int nb_stack);
+void	print_list(t_list_data *stack_data, int nb_stack);
 void	free_linked_list(t_list_data *stack_1, t_list_data *stack_2);
 
 // stack_gestion_2.c
@@ -94,7 +94,8 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size);
 int		define_chunk_size(t_list_data *stack_data_1);
 
 // sorting_big.c
-void	push_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size, int i);
+void	push_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	pa_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size);
 
 #endif

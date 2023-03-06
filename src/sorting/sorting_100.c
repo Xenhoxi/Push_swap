@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/02 23:00:01 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/05 12:20:22 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sorting_100(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	if (stack_data_1->start_length <= 25)
 		sorting_small(stack_data_1, stack_data_2);
 	else if (stack_data_1->start_length > 25)
-		sorting_big(stack_data_1, stack_data_2);
+		sorting_bigg(stack_data_1, stack_data_2);
 }
 
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2)
@@ -71,8 +71,6 @@ void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2)
 			put_higher_in_first(stack_data_2, 'b');
 	}
 }
-
-
 
 void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 {

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:08:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/12 17:41:14 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/06 01:29:35 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	swap(t_list_data *stack_data, char stack_selected)
 	{
 		swap = stack->next;
 		stack->next = swap->next;
+		stack->prev = swap;
 		if (stack->next)
 			stack->next->prev = stack;
 		swap->prev = 0;
