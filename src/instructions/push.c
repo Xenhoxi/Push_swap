@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:27:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/06 01:39:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/07 01:49:21 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	{
 		tmp = stack_data_1->first;
 		stack_data_1->first = stack_data_1->first->next;
-		stack_data_1->first->prev = 0;
+		if (stack_data_1->first)
+			stack_data_1->first->prev = 0;
 		stack_data_1->length--;
 		tmp->next = stack_data_2->first;
 		tmp->prev = 0;
