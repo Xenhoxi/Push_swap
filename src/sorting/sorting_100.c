@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/07 14:02:44 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:35:15 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	while (stack_data_2->length)
 	{
 		rotate_a_or_put_higher(stack_data_1, stack_data_2);
+		// put_higher_in_first(stack_data_2, 'b');
 		pa(stack_data_1, stack_data_2);
-		print_list(stack_data_1, 1);
-		print_list(stack_data_2, 2);
 	}
 }
+
 // fonctions qui va trouver la position ou mettre la premiere valeur de la pile 2 pour que la pile 1 soit triee
 void	find_good_place(t_list_data *s_data_1, t_list_data *s_data_2)
 {
@@ -81,13 +81,9 @@ void	find_good_place(t_list_data *s_data_1, t_list_data *s_data_2)
 
 	s_1 = s_data_1->first;
 	s_2 = s_data_2->first;
-	while (s_1 && s_1->next && s_2)
+	if (stacklast(s_data_1->first)->rank == s_data_1->start_length)
 	{
-		if (s_1->rank > s_2->rank && stacklast(s_data_1->first)->rank < s_2->rank)
-			break ;
-		else if (s_1->rank > s_2->rank)
-			break ;
-		else
+		while (s_1->rank > s_2->rank && stacklast(s_data_1->first)->rank < s_2->rank)
 		{
 			if (count_find_place(s_data_1, s_data_2) >= s_data_1->length / 2)
 				rev_rotate(s_data_1, 'a');
@@ -100,7 +96,7 @@ void	find_good_place(t_list_data *s_data_1, t_list_data *s_data_2)
 // fonctions qui va compter le nombre de rotation pour trouver la bonne place
 int	count_find_place(t_list_data *s_data_1, t_list_data *s_data_2)
 {
-	int	i;
+	int		i;
 	t_list	*s_1;
 	t_list	*s_2;
 
@@ -130,21 +126,26 @@ int	count_put_higher(t_list_data *stack_data)
 // code a function to count the number of rotations tu put the higher rank in first position
 void	rotate_a_or_put_higher(t_list_data *s_data_1, t_list_data *s_data_2)
 {
-	int	rotate_a;
-	int	put_higher_b;
+	// int	rotate_a;
+	// int	put_higher_b;
 
-	rotate_a = count_find_place(s_data_1, s_data_2);
-	put_higher_b = count_put_higher(s_data_2);
-	if (rotate_a < put_higher_b)
-	{
-		printf("on rotate a\n");
+	// rotate_a = count_find_place(s_data_1, s_data_2);
+	// put_higher_b = count_put_higher(s_data_2);
+	// if (rotate_a < put_higher_b)
+	// {
+	// 	// printf("on rotate a\n");
+	// 	find_good_place(s_data_1, s_data_2);
+	// 	// put_lower_in_first(s_data_1, 'a');
+	// }
+	// else
+	// {
+	// 	// printf("on rotate b\n");
+	// 	put_higher_in_first(s_data_2, 'b');
+	// }
+	if (s_data_1->length < s_data_1->start_length / 2)
 		find_good_place(s_data_1, s_data_2);
-	}
 	else
-	{
-		printf("on rotate b\n");
 		put_higher_in_first(s_data_2, 'b');
-	}
 }
 
 void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
