@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/07 12:36:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/09 00:02:36 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,10 @@ void	push_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	pa_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size);
 void	sort_ck(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size);
-void	rotate_a_or_put_higher(t_list_data *s_data_1, t_list_data *s_data_2);
 int		count_find_place(t_list_data *s_data_1, t_list_data *s_data_2);
 void	find_good_place(t_list_data *s_data_1, t_list_data *s_data_2);
+void	what_should_i_do(t_list_data *stack_data, int size, int min_r);
+int	find_last_in_range(t_list_data *stack_data, int size, int min_r);
+int	find_first_in_range(t_list_data *stack_data, int size, int min_r);
 
 #endif

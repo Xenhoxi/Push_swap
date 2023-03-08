@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:04:50 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/06 13:30:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/09 00:05:35 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,14 @@ int	find_first_in_range(t_list_data *stack_data, int size, int min_r)
 	i = 0;
 	while (stack)
 	{
-		if (stack->rank >= min_r && stack->rank < min_r + size)
-			return (i);
+		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
+			break ;
 		else
 			i++;
 		stack = stack->next;
 	}
-	return (-1);
+	// printf("rank a trouver dans first : %d\n", stack->rank);
+	return (i);
 }
 
 int	find_last_in_range(t_list_data *stack_data, int size, int min_r)
@@ -60,26 +61,14 @@ int	find_last_in_range(t_list_data *stack_data, int size, int min_r)
 	i = 0;
 	while (stack)
 	{
-		if (stack->rank >= min_r && stack->rank < min_r + size)
-			return (i++);
+		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
+			break ;
 		else
 			i++;
 		stack = stack->prev;
 	}
-	return (1);
-}
-
-void	what_should_i_do(t_list_data *stack_data, int size, int min_r)
-{
-	int	first;
-	int	last;
-
-	first = find_first_in_range(stack_data, size, min_r);
-	last = find_last_in_range(stack_data, size, min_r);
-	if (first < last)
-		rotate(stack_data, 'a');
-	else
-		rev_rotate(stack_data, 'a');
+	// printf("rank a trouver dans last : %d\n", stack->rank);
+	return (++i);
 }
 
 void	push_ck(t_list_data *s_data_1, t_list_data *s_data_2, int size)
