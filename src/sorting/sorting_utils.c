@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:49:32 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/07 17:11:57 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/08 11:16:49 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,17 +74,13 @@ void	put_higher_in_first(t_list_data *stack_data, char chose_stack)
 {
 	int		rank_max;
 	int		pos;
-	t_list	*stack;
+	// t_list	*stack;
 
-	stack = stack_data->first;
+	// stack = stack_data->first;
 	rank_max = find_higher_rank(stack_data);
 	pos = find_eazy_ways(stack_data, rank_max);
 	while (stack_data->first->rank != rank_max && pos <= stack_data->length / 2)
-	{
 		rotate(stack_data, chose_stack);
-	}
 	while (stack_data->first->rank != rank_max && pos > stack_data->length / 2)
-	{
 		rev_rotate(stack_data, chose_stack);
-	}
 }
