@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/08 23:43:36 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:58:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 		exit(1);
 	else
 		sorting(&stack_1, &stack_2);
+	if (is_sort(&stack_1))
+		// printf("OK");
 	// print_list(&stack_1, 1);
 	// print_list(&stack_2, 2);
 	// free_linked_list(&stack_1, &stack_2);

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 11:54:59 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:57:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sorting_100(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	if (stack_data_1->start_length <= 25)
 		sorting_small(stack_data_1, stack_data_2);
 	else if (stack_data_1->start_length > 25)
-		sorting_bigg(stack_data_1, stack_data_2);
+		sorting_big(stack_data_1, stack_data_2);
 }
 
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2)
@@ -47,7 +47,7 @@ int	define_chunk_size(t_list_data *stack_data_1)
 	return (size);
 }
 
-void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2)
+void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 {
 	int	i;
 	int	chunk_size;
@@ -67,27 +67,10 @@ void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		pa(stack_data_1, stack_data_2);
 	while (stack_data_2->length)
 	{
-		put_higher_in_first(stack_data_2, 'b');
+		put_higher(stack_data_1, stack_data_2, 'b');
 		pa(stack_data_1, stack_data_2);
-	}
-}
-
-void	while_its_sort(t_list_data *s_data_1, t_list_data *s_data_2)
-{
-	t_list	*s_1;
-	t_list	*s_2;
-
-	s_1 = s_data_1->first;
-	s_2 = s_data_2->first;
-	while (s_data_2->length)
-	{
-		if (s_1->rank > s_2->next->rank)
-			pa(s_data_1, s_data_2);
-		else
-		{
-			put_higher_in_first(s_data_2, 'b');
-			pa(s_data_1, s_data_2);
-		}
+		if (stack_data_1->first->rank > stack_data_1->first->next->rank)
+			swap(stack_data_1, 'a');
 	}
 }
 
@@ -115,55 +98,4 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 		else
 			rotate(s_data_1, 'a');
 	}
-}
-
-void	what_should_i_do(t_list_data *stack_data, int size, int min_r)
-{
-	int	first;
-	int	last;
-
-	first = find_first_in_range(stack_data, size, min_r);
-	last = find_last_in_range(stack_data, size, min_r);
-	if (first < last)
-		while (first > 0 && first--)
-			rotate(stack_data, 'a');
-	else
-		while (last && last--)
-			rev_rotate(stack_data, 'a');
-}
-
-int	find_first_in_range(t_list_data *stack_data, int size, int min_r)
-{
-	t_list	*stack;
-	int		i;
-
-	stack = stack_data->first;
-	i = 0;
-	while (stack)
-	{
-		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
-			break ;
-		else
-			i++;
-		stack = stack->next;
-	}
-	return (i);
-}
-
-int	find_last_in_range(t_list_data *stack_data, int size, int min_r)
-{
-	t_list	*stack;
-	int		i;
-
-	stack = stacklast(stack_data->first);
-	i = 0;
-	while (stack)
-	{
-		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
-			break ;
-		else
-			i++;
-		stack = stack->prev;
-	}
-	return (++i);
 }
