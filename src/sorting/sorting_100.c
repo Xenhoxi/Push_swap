@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 00:04:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/09 11:54:59 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,18 +72,34 @@ void	sorting_bigg(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	}
 }
 
+void	while_its_sort(t_list_data *s_data_1, t_list_data *s_data_2)
+{
+	t_list	*s_1;
+	t_list	*s_2;
+
+	s_1 = s_data_1->first;
+	s_2 = s_data_2->first;
+	while (s_data_2->length)
+	{
+		if (s_1->rank > s_2->next->rank)
+			pa(s_data_1, s_data_2);
+		else
+		{
+			put_higher_in_first(s_data_2, 'b');
+			pa(s_data_1, s_data_2);
+		}
+	}
+}
+
 void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 {
 	t_list	*s_1;
 	int		min_r;
-	// int 	num;
 
-	// num = 0;
 	min_r = find_lower_rank(s_data_1);
 	s_1 = s_data_1->first;
 	while (s_data_2->length < size * 2 * i && s_data_1->length > 1)
 	{
-		// printf("length %d\n", s_data_1->length);
 		s_1 = s_data_1->first;
 		if (s_1->rank == s_data_1->start_length)
 			rotate(s_data_1, 'a');
@@ -97,13 +113,7 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 		else if (s_data_2->length == s_data_1->start_length)
 			break ;
 		else
-		{
-			// printf("je fais quoi ? %d\n", ++num);
-			// rotate(s_data_1, 'a');
-			what_should_i_do(s_data_1, size, min_r);
-			// print_list(s_data_1, 1);
-			// print_list(s_data_2, 2);
-		}
+			rotate(s_data_1, 'a');
 	}
 }
 
@@ -111,24 +121,49 @@ void	what_should_i_do(t_list_data *stack_data, int size, int min_r)
 {
 	int	first;
 	int	last;
-	// static int i = 0;
 
 	first = find_first_in_range(stack_data, size, min_r);
 	last = find_last_in_range(stack_data, size, min_r);
-	// printf("first = %d\n", first);
-	// printf("last = %d\n", last);
-	// printf("range du size : de %d a %d\n", min_r, min_r + size * 2);
-	// usleep(100000);
-
-	// if (first < last)
-	// 	i++;
 	if (first < last)
 		while (first > 0 && first--)
 			rotate(stack_data, 'a');
 	else
 		while (last && last--)
 			rev_rotate(stack_data, 'a');
+}
 
-	// printf("i = %d\n", i);
-	// printf("rank %d\n", stack_data->first->rank);
+int	find_first_in_range(t_list_data *stack_data, int size, int min_r)
+{
+	t_list	*stack;
+	int		i;
+
+	stack = stack_data->first;
+	i = 0;
+	while (stack)
+	{
+		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
+			break ;
+		else
+			i++;
+		stack = stack->next;
+	}
+	return (i);
+}
+
+int	find_last_in_range(t_list_data *stack_data, int size, int min_r)
+{
+	t_list	*stack;
+	int		i;
+
+	stack = stacklast(stack_data->first);
+	i = 0;
+	while (stack)
+	{
+		if (stack->rank >= min_r && stack->rank < min_r + size * 2)
+			break ;
+		else
+			i++;
+		stack = stack->prev;
+	}
+	return (++i);
 }
