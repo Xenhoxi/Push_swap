@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:27:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/07 01:49:21 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:45:17 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/pushswap.h"
 
-void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2)
+void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2, int true)
 {
 	t_list	*tmp;
 
@@ -29,11 +29,12 @@ void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2)
 			tmp->next->prev = tmp;
 		stack_data_1->first = tmp;
 		stack_data_1->length++;
-		write(1, "pa\n", 3);
+		if (true)
+			write(1, "pa\n", 3);
 	}
 }
 
-void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2)
+void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2, int true)
 {
 	t_list	*tmp;
 
@@ -50,6 +51,7 @@ void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2)
 			tmp->next->prev = tmp;
 		stack_data_2->first = tmp;
 		stack_data_2->length++;
-		write(1, "pb\n", 3);
+		if (true)
+			write(1, "pb\n", 3);
 	}
 }

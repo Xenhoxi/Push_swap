@@ -30,6 +30,7 @@ SRCS =	ft_strlen.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
+		ft_strncmp.c \
 		ft_lstadd_back.c \
 		ft_lstdelfirst.c \
 		ft_lstdellast.c \
@@ -59,21 +60,5 @@ fclean: clean
 	@rm -f $(OBJECTS)
 
 re: fclean all
-
-# all: $(NAME) 
-
-# $(NAME): $(OBJECTS)
-# 	@$(AR) -rc $@ $?
-
-# bonus: $(BONUS)
-# 	@$(AR) -rc $(NAME) $?
-
-# clean:
-# 	@rm -f $(OBJECTS) $(BONUS)
-
-# fclean: clean
-# 	@/bin/rm -f $(NAME)
-
-# re: fclean all
 
 .PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 23:19:17 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:45:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	init_list(t_list_data *stack);
 void	swap(t_list_data *stack_data, char stack_selected);
 void	ss(t_list_data *stack__1, t_list_data *stack__2);
 // push.c
-void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2);
-void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2, int true);
+void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2, int true);
 // rotate.c
 void	rotate(t_list_data *stack_data, char stack_selected);
 void	rr(t_list_data *stack_data_1, t_list_data *stack_data_2);

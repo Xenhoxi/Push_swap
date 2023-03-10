@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 17:18:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:47:15 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	while (stack_data_1->length)
 	{
 		put_lower_in_first(stack_data_1, 'a');
-		pb(stack_data_1, stack_data_2);
+		pb(stack_data_1, stack_data_2, 1);
 	}
 	while (stack_data_2->length)
-		pa(stack_data_1, stack_data_2);
+		pa(stack_data_1, stack_data_2, 1);
 }
 
 int	define_chunk_size(t_list_data *stack_data_1)
@@ -61,14 +61,14 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 		if (is_sort(stack_data_1))
 			break ;
 		put_lower_in_first(stack_data_1, 'a');
-		pb(stack_data_1, stack_data_2);
+		pb(stack_data_1, stack_data_2, 1);
 	}
 	while (stack_data_1->first->rank == (stack_data_2->first->rank) + 1)
-		pa(stack_data_1, stack_data_2);
+		pa(stack_data_1, stack_data_2, 1);
 	while (stack_data_2->length)
 	{
 		put_higher(stack_data_1, stack_data_2, 'b');
-		pa(stack_data_1, stack_data_2);
+		pa(stack_data_1, stack_data_2, 1);
 		if (stack_data_1->first->rank > stack_data_1->first->next->rank)
 			swap(stack_data_1, 'a');
 	}
@@ -87,10 +87,10 @@ void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
 		if (s_1->rank == s_data_1->start_length)
 			rotate(s_data_1, 'a');
 		else if (s_1->rank >= min_r + size && s_1->rank < min_r + size * 2)
-			pb(s_data_1, s_data_2);
+			pb(s_data_1, s_data_2, 1);
 		else if (s_1->rank >= min_r && s_1->rank < min_r + size)
 		{
-			pb(s_data_1, s_data_2);
+			pb(s_data_1, s_data_2, 1);
 			rotate(s_data_2, 'b');
 		}
 		else if (s_data_2->length == s_data_1->start_length)
