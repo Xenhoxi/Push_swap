@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 15:57:48 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/09 23:19:17 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include "get_next_line/get_next_line.h"
 
 typedef struct s_list_data
 {
@@ -86,7 +87,7 @@ void	put_lower_in_first(t_list_data *stack_data, char chose_stack);
 int		find_eazy_ways(t_list_data *stack_data, int smallest_rank);
 int		find_lower_rank(t_list_data *stack_data);
 
-// sorting_100.c
+// sorting_big.c
 void	sorting_100(t_list_data *stack_1, t_list_data *stack_2);
 void	sorting_small(t_list_data *stack_data_1, t_list_data *stack_data_2);
 void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2);

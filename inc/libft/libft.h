@@ -50,7 +50,6 @@ void		*ft_memchr(const void *str, int caracter, size_t len);
 char		*ft_strnstr(const char *str, const char *to_find, size_t n);
 size_t		ft_strlcat(char *dst, const char	*src, size_t dstsize);
 void		*ft_calloc(size_t count, size_t size);
-char		*ft_strjoin(char const *s1, char const *s2);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
