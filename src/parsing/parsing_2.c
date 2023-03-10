@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:51:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 00:19:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:54:48 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	identical_numbers(long long *int_array, int input_len)
 
 void	error(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
