@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:49:09 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/08 22:18:17 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:56:31 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	checking(int argc, char **argv)
 	char	**input_list;
 
 	if (argc <= 1)
-		write(1, "Error\n", 6);
+		exit(1);
 	if (argc == 2)
 	{
 		input_list = ft_split(argv[1], ' ');
@@ -103,7 +103,7 @@ int	only_int(char **input_list)
 		numbers[i] = ft_atoi_2(input_list[i]);
 		if (numbers[i] < INT_MIN || numbers[i] > INT_MAX)
 		{
-			free(input_list);
+			free(numbers);
 			return (0);
 		}
 		i++;

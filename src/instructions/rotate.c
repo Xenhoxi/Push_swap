@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:32:52 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/02/13 11:28:09 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/11 01:43:05 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ void	rotate(t_list_data *stack_data, char stack_selected)
 	}
 }
 
-void	rr(t_list_data *stack_data_1, t_list_data *stack_data_2)
+void	rr(t_list_data *stack_data_1, t_list_data *stack_data_2, int true)
 {
 	if (stack_data_1->first && stack_data_1->first->next)
 		rotate(stack_data_1, ' ');
 	if (stack_data_2->first && stack_data_2->first->next)
 		rotate(stack_data_2, ' ');
-	write(1, "rr\n", 3);
+	if (true)
+		write(1, "rr\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:31:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 23:50:03 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:07:11 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int argc, char **argv)
 
 	init_list(&stack_1);
 	init_list(&stack_2);
-	// system("leaks push_swap");
 	set_stack_1(argc, argv, &stack_1);
 	ranking(&stack_1);
 	if (is_sort(&stack_1))

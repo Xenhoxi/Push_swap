@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:03:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/10 12:45:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/11 01:42:14 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void	pa(t_list_data *stack_data_1, t_list_data *stack_data_2, int true);
 void	pb(t_list_data *stack_data_1, t_list_data *stack_data_2, int true);
 // rotate.c
 void	rotate(t_list_data *stack_data, char stack_selected);
-void	rr(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	rr(t_list_data *stack_data_1, t_list_data *stack_data_2, int true);
 // reverse_rotate.c
 void	rev_rotate(t_list_data *stack_data, char stack_selected);
-void	rrr(t_list_data *stack_data_1, t_list_data *stack_data_2);
+void	rrr(t_list_data *stack_data_1, t_list_data *stack_data_2, int true);
 
 // sorting_utils.c 
 void	ranking(t_list_data *stack_data);
