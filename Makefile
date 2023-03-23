@@ -6,11 +6,15 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/18 16:44:58 by ljerinec          #+#    #+#              #
-#    Updated: 2023/03/11 02:03:26 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/03/23 13:17:31 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+HEADERS = inc/push_swap.h
 NAME = push_swap
+
+CFLAGS = -Wall -Werror -Wextra
+CC = gcc
 
 SRCS = 	src/sorting/push_swap.c \
 		src/parsing/parsing.c \
@@ -46,23 +50,23 @@ PRINT_NAME		= push-swap
 PRINT_PREFIX	= \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
 
 LIBFT_DIR = inc/libft/libft.a
+
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 OBJECTS = $(SRCS:%.c=%.o)
 OBJECTSBONUS = $(SRCSBONUS:%.c=%.o)
 
-CFLAGS = -Wall -Werror -Wextra
-CC = gcc
-
 all: $(NAME)
 
-libft:
+$(NAME): $(OBJECTS) 
 	@make -C inc/libft
-
-$(NAME): libft $(OBJECTS) $(SRCS)
 	@echo "$(PRINT_PREFIX)\033[0;38;5;226m Compiling \033[0m\n"
-	@$(CC) -o $(NAME) $(OBJECTS) $(LIBFT_DIR)
+	@$(CC) -o push_swap $(OBJECTS) $(LIBFT_DIR)
 	@echo "$(PRINT_PREFIX)\033[0;38;5;226m Done \033[0m\n"
-
-bonus: libft $(OBJECTSBONUS) $(SRCSBONUS)
+	
+bonus: $(OBJECTSBONUS)
+	@make -C inc/libft
 	@$(CC) -o checker $(OBJECTSBONUS) $(LIBFT_DIR)
 
 clean:
@@ -78,4 +82,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

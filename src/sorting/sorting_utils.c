@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:49:32 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/10 12:46:11 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/22 11:31:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	find_higher_rank(t_list_data *stack_data)
 	return (rank);
 }
 
-void	put_higher(t_list_data *s_d_1, t_list_data *s_d_2, char chose_stack)
+void	put_higher(t_list_data *s_d_1, t_list_data *s_d_2, char stack)
 {
 	int		rank_max;
 	int		pos;
@@ -84,7 +84,7 @@ void	put_higher(t_list_data *s_d_1, t_list_data *s_d_2, char chose_stack)
 			if (s_d_2->first->rank == rank_max - 1)
 				pa(s_d_1, s_d_2, 1);
 			else
-				rotate(s_d_2, chose_stack);
+				rotate(s_d_2, stack);
 		}
 	}
 	else
@@ -94,7 +94,7 @@ void	put_higher(t_list_data *s_d_1, t_list_data *s_d_2, char chose_stack)
 			if (s_d_2->first->rank == rank_max - 1)
 				pa(s_d_1, s_d_2, 1);
 			else
-				rev_rotate(s_d_2, chose_stack);
+				rev_rotate(s_d_2, stack);
 		}
 	}
 }

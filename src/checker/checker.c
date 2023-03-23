@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 21:38:42 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/11 01:47:16 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/22 11:52:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,26 @@ void	check_output(char *line, t_list_data *stack_1, t_list_data *stack_2)
 
 int	main(int argc, char **argv)
 {
-	t_list_data	stack_1;
-	t_list_data	stack_2;
+	t_list_data	*stack_1;
+	t_list_data	*stack_2;
 	char		*line;
 
-	init_list(&stack_1);
-	init_list(&stack_2);
-	set_stack_1(argc, argv, &stack_1);
-	ranking(&stack_1);
+	stack_1 = init_list();
+	stack_2 = init_list();
+	set_stack_1(argc, argv, stack_1);
+	ranking(stack_1);
 	line = get_next_line(0);
 	while (line)
 	{
-		check_output(line, &stack_1, &stack_2);
-		if (is_sort(&stack_1) && stack_2.length == 0)
+		check_output(line, stack_1, stack_2);
+		if (is_sort(stack_1) && stack_2->length == 0)
 			break ;
 		line = get_next_line(0);
 	}
-	if (is_sort(&stack_1) && stack_2.length == 0)
+	if (is_sort(stack_1) && stack_2->length == 0)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	free_linked_list(&stack_1, &stack_2);
+	free_linked_list(stack_1, stack_2);
 	return (0);
 }

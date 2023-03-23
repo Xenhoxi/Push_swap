@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:29:59 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/10 12:47:15 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/22 11:40:37 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,28 +74,28 @@ void	sorting_big(t_list_data *stack_data_1, t_list_data *stack_data_2)
 	}
 }
 
-void	pb_chunk(t_list_data *s_data_1, t_list_data *s_data_2, int i, int size)
+void	pb_chunk(t_list_data *s_d_1, t_list_data *s_d_2, int i, int size)
 {
 	t_list	*s_1;
 	int		min_r;
 
-	min_r = find_lower_rank(s_data_1);
-	s_1 = s_data_1->first;
-	while (s_data_2->length < size * 2 * i && s_data_1->length > 1)
+	min_r = find_lower_rank(s_d_1);
+	s_1 = s_d_1->first;
+	while (s_d_2->length < size * 2 * i && s_d_1->length > 1)
 	{
-		s_1 = s_data_1->first;
-		if (s_1->rank == s_data_1->start_length)
-			rotate(s_data_1, 'a');
+		s_1 = s_d_1->first;
+		if (s_1->rank == s_d_1->start_length)
+			rotate(s_d_1, 'a');
 		else if (s_1->rank >= min_r + size && s_1->rank < min_r + size * 2)
-			pb(s_data_1, s_data_2, 1);
+			pb(s_d_1, s_d_2, 1);
 		else if (s_1->rank >= min_r && s_1->rank < min_r + size)
 		{
-			pb(s_data_1, s_data_2, 1);
-			rotate(s_data_2, 'b');
+			pb(s_d_1, s_d_2, 1);
+			rotate(s_d_2, 'b');
 		}
-		else if (s_data_2->length == s_data_1->start_length)
+		else if (s_d_2->length == s_d_1->start_length)
 			break ;
 		else
-			rotate(s_data_1, 'a');
+			rotate(s_d_1, 'a');
 	}
 }

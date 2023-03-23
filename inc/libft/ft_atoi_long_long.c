@@ -6,13 +6,11 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:52:14 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/01/24 02:26:34 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:04:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdlib.h>
 
 long long	ft_atoi_2(const char *str)
 {

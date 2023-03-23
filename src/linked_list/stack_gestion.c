@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 02:59:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/03/09 21:23:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/03/22 11:44:46 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ void	print_list(t_list_data *stack_data, int nb_stack)
 void	free_linked_list(t_list_data *stack_1, t_list_data *stack_2)
 {
 	(void) stack_2;
-
 	while (stack_1->first->next)
 		ft_lstdellast(stack_1->first);
 	free(stack_1->first);
+	free(stack_1);
+	free(stack_2);
 	stack_1->first = NULL;
 }
